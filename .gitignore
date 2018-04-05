@@ -22,7 +22,6 @@ target/
 
 # temp file
 
-*.log
 *.cache
 *.diff
 *.patch
