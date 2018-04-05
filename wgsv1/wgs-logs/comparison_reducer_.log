@@ -1,0 +1,50 @@
+18/04/05 20:30:27 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+get: `SRR1770413.g.vcf': File exists
+Using GATK jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=1 -jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar GenotypeGVCFs -R /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa -V SRR1770413.g.vcf -O E_coli_K12.vcf
+20:30:30.834 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_compression.so
+20:30:31.146 INFO  GenotypeGVCFs - ------------------------------------------------------------
+20:30:31.146 INFO  GenotypeGVCFs - The Genome Analysis Toolkit (GATK) v4.0.2.1
+20:30:31.146 INFO  GenotypeGVCFs - For support and documentation go to https://software.broadinstitute.org/gatk/
+20:30:31.147 INFO  GenotypeGVCFs - Executing as elon@longsl on Linux v4.13.0-36-generic amd64
+20:30:31.147 INFO  GenotypeGVCFs - Java runtime: Java HotSpot(TM) 64-Bit Server VM v1.8.0_161-b12
+20:30:31.148 INFO  GenotypeGVCFs - Start Date/Time: 2018年4月5日 下午08时30分30秒
+20:30:31.148 INFO  GenotypeGVCFs - ------------------------------------------------------------
+20:30:31.149 INFO  GenotypeGVCFs - ------------------------------------------------------------
+20:30:31.150 INFO  GenotypeGVCFs - HTSJDK Version: 2.14.3
+20:30:31.150 INFO  GenotypeGVCFs - Picard Version: 2.17.2
+20:30:31.150 INFO  GenotypeGVCFs - HTSJDK Defaults.COMPRESSION_LEVEL : 1
+20:30:31.150 INFO  GenotypeGVCFs - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+20:30:31.150 INFO  GenotypeGVCFs - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+20:30:31.151 INFO  GenotypeGVCFs - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+20:30:31.151 INFO  GenotypeGVCFs - Deflater: IntelDeflater
+20:30:31.151 INFO  GenotypeGVCFs - Inflater: IntelInflater
+20:30:31.151 INFO  GenotypeGVCFs - GCS max retries/reopens: 20
+20:30:31.151 INFO  GenotypeGVCFs - Using google-cloud-java patch 6d11bef1c81f885c26b2b56c8616b7a705171e4f from https://github.com/droazen/google-cloud-java/tree/dr_all_nio_fixes
+20:30:31.152 INFO  GenotypeGVCFs - Initializing engine
+20:30:31.606 INFO  FeatureManager - Using codec VCFCodec to read file file:///tmp/SRR1770413.g.vcf
+20:30:31.649 INFO  GenotypeGVCFs - Done initializing engine
+20:30:32.548 INFO  ProgressMeter - Starting traversal
+20:30:32.549 INFO  ProgressMeter -        Current Locus  Elapsed Minutes    Variants Processed  Variants/Minute
+20:30:33.045 WARN  ReferenceConfidenceVariantContextMerger - Detected invalid annotations: When trying to merge variant contexts at location NC_000913.3:25739 the annotation MLEAC=[1, 0] was not a numerical value and was ignored
+20:30:39.110 INFO  ProgressMeter -  NC_000913.3:1766606              0.1                 86175         788065.8
+20:30:39.110 INFO  ProgressMeter - Traversal complete. Processed 86175 total variants in 0.1 minutes.
+20:30:39.118 INFO  GenotypeGVCFs - Shutting down engine
+[2018年4月5日 下午08时30分39秒] org.broadinstitute.hellbender.tools.walkers.GenotypeGVCFs done. Elapsed time: 0.14 minutes.
+Runtime.totalMemory()=406847488
+
+real	0m11.227s
+user	0m27.006s
+sys	0m0.402s
+
+real	0m0.060s
+user	0m0.011s
+sys	0m0.000s
+
+real	0m0.078s
+user	0m0.004s
+sys	0m0.000s
+18/04/05 20:30:40 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+put: `/wgs/output/vcf/E_coli_K12.vcf.gz': File exists
+put: `/wgs/output/vcf/E_coli_K12.vcf.gz.tbi': File exists

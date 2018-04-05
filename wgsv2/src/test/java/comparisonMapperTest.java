@@ -5,8 +5,6 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-import static org.junit.Assert.*;
-
 public class comparisonMapperTest {
 
     /*
@@ -14,7 +12,7 @@ public class comparisonMapperTest {
      */
     @Test
     public void comparison() throws IOException {
-        Text value = new Text("SRR1770413");
+        Text value = new Text("SRR3226035");
 
         new MapDriver<LongWritable, Text, Text, Text>()
                 .withMapper(new comparisonMapper())
