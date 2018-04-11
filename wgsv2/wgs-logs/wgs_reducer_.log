@@ -1,0 +1,61 @@
+18/04/11 22:47:55 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+get: `SRR3226042.g.vcf': File exists
+18/04/11 22:47:56 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+get: `SRR3226041.g.vcf': File exists
+18/04/11 22:47:58 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+get: `SRR3226040.g.vcf': File exists
+18/04/11 22:48:00 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+get: `SRR3226039.g.vcf': File exists
+18/04/11 22:48:02 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+get: `SRR3226038.g.vcf': File exists
+18/04/11 22:48:04 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+get: `SRR3226037.g.vcf': File exists
+18/04/11 22:48:06 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+get: `SRR3226036.g.vcf': File exists
+18/04/11 22:48:08 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+get: `SRR3226035.g.vcf': File exists
+18/04/11 22:48:10 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+get: `SRR3226034.g.vcf': File exists
+INFO  22:48:13,832 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  22:48:13,851 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.6-6-g965413b, Compiled 2016/07/11 21:22:38 
+INFO  22:48:13,852 HelpFormatter - Copyright (c) 2010-2016 The Broad Institute 
+INFO  22:48:13,852 HelpFormatter - For support and documentation go to https://www.broadinstitute.org/gatk 
+INFO  22:48:13,852 HelpFormatter - [Wed Apr 11 22:48:13 CST 2018] Executing on Linux 4.13.0-38-generic amd64 
+INFO  22:48:13,852 HelpFormatter - Java HotSpot(TM) 64-Bit Server VM 1.8.0_161-b12 
+INFO  22:48:13,855 HelpFormatter - Program Args: -T GenotypeGVCFs -nt 4 -R /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa --variant SRR3226042.g.vcf --variant SRR3226041.g.vcf --variant SRR3226040.g.vcf --variant SRR3226039.g.vcf --variant SRR3226038.g.vcf --variant SRR3226037.g.vcf --variant SRR3226036.g.vcf --variant SRR3226035.g.vcf --variant SRR3226034.g.vcf -o E_coli_K12.vcf 
+INFO  22:48:13,860 HelpFormatter - Executing as elon@longsl on Linux 4.13.0-38-generic amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_161-b12. 
+INFO  22:48:13,860 HelpFormatter - Date/Time: 2018/04/11 22:48:13 
+INFO  22:48:13,860 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  22:48:13,860 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  22:48:13,949 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  22:48:14,031 GenomeAnalysisEngine - Downsampling Settings: Method: BY_SAMPLE, Target Coverage: 1000 
+INFO  22:48:14,383 MicroScheduler - Running the GATK in parallel mode with 4 total threads, 1 CPU thread(s) for each of 4 data thread(s), of 4 processors available on this machine 
+INFO  22:48:14,447 GenomeAnalysisEngine - Preparing for traversal 
+INFO  22:48:14,448 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  22:48:14,449 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  22:48:14,449 ProgressMeter -                 | processed |    time |    per 1M |           |   total | remaining 
+INFO  22:48:14,450 ProgressMeter -        Location |     sites | elapsed |     sites | completed | runtime |   runtime 
+WARN  22:48:14,586 StrandBiasTest - StrandBiasBySample annotation exists in input VCF header. Attempting to use StrandBiasBySample values to calculate strand bias annotation values. If no sample has the SB genotype annotation, annotation may still fail. 
+WARN  22:48:14,587 InbreedingCoeff - Annotation will not be calculated. InbreedingCoeff requires at least 10 unrelated samples. 
+WARN  22:48:14,588 StrandBiasTest - StrandBiasBySample annotation exists in input VCF header. Attempting to use StrandBiasBySample values to calculate strand bias annotation values. If no sample has the SB genotype annotation, annotation may still fail. 
+INFO  22:48:14,588 GenotypeGVCFs - Notice that the -ploidy parameter is ignored in GenotypeGVCFs tool as this is automatically determined by the input variant files 
+WARN  22:48:15,057 HaplotypeScore - Annotation will not be calculated, must be called from UnifiedGenotyper, not org.broadinstitute.gatk.tools.walkers.variantutils.GenotypeGVCFs 
+INFO  22:48:44,453 ProgressMeter - NC_000913.3:1378901         0.0    30.0 s      49.6 w       77.9%    38.0 s       8.0 s 
+WARN  22:48:55,190 ExactAFCalculator - This tool is currently set to genotype at most 6 alternate alleles in a given context, but the context at NC_000913.3: 578883 has 7 alternate alleles so only the top alleles will be used; see the --max_alternate_alleles argument. Unless the DEBUG logging level is used, this warning message is output just once per run and further warnings are suppressed. 
+INFO  22:49:13,066 ProgressMeter -            done   1769345.0    58.0 s      33.0 s      100.0%    58.0 s       0.0 s 
+INFO  22:49:13,067 ProgressMeter - Total runtime 58.62 secs, 0.98 min, 0.02 hours 
+
+real	1m2.220s
+user	2m57.969s
+sys	0m33.210s
+
+real	0m0.202s
+user	0m0.124s
+sys	0m0.012s
+
+real	0m0.109s
+user	0m0.021s
+sys	0m0.004s
+18/04/11 22:49:14 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+put: `/wgsv2/output/vcf/E_coli_K12.vcf.gz': File exists
+put: `/wgsv2/output/vcf/E_coli_K12.vcf.gz.tbi': File exists

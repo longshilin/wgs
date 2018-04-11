@@ -11,6 +11,7 @@
     <modules>
         <module>wgsv2</module>
         <module>wgsv1</module>
+        <module>wgsv3</module>
     </modules>
 
     <properties>

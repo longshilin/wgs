@@ -28,7 +28,7 @@ public class ShellScriptUtil {
         }
 
         System.out.println(scriptPath);
-        ProcessBuilder pb = new ProcessBuilder("./" + scriptPath);
+        ProcessBuilder pb = new ProcessBuilder("/bin/bash", scriptPath);
         pb.inheritIO();
 
         if (paths.length == 3) {
@@ -42,7 +42,7 @@ public class ShellScriptUtil {
         if (paths.length == 2) {
             // shell脚本错误日志输出
             logFile = new File(paths[1]);
-            if(logFile.exists())
+            if (logFile.exists())
                 logFile.delete();
             pb.redirectError(logFile);
         }

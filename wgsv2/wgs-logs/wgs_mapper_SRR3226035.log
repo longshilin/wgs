@@ -1,0 +1,360 @@
+18/04/11 21:56:08 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+get: `SRR3226035_1.fastq.gz': File exists
+18/04/11 21:56:10 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+get: `SRR3226035_2.fastq.gz': File exists
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 533018 sequences (40000045 bp)...
+[M::process] read 533050 sequences (40000069 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6046, 16310, 2617, 5887)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (43, 87, 163)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 403)
+[M::mem_pestat] mean and std.dev: (105.33, 84.13)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 523)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (78, 145, 223)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 513)
+[M::mem_pestat] mean and std.dev: (156.75, 100.88)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 658)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (29, 68, 139)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 359)
+[M::mem_pestat] mean and std.dev: (85.68, 76.56)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 469)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (45, 92, 165)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 405)
+[M::mem_pestat] mean and std.dev: (107.30, 84.97)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 525)
+[M::mem_process_seqs] Processed 533018 reads in 43.097 CPU sec, 10.922 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6143, 16429, 2710, 5755)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (46, 87, 164)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 400)
+[M::mem_pestat] mean and std.dev: (106.69, 85.03)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 518)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (78, 145, 223)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 513)
+[M::mem_pestat] mean and std.dev: (157.73, 101.92)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 658)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (28, 67, 140)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 364)
+[M::mem_pestat] mean and std.dev: (85.93, 77.12)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 476)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (45, 91, 166)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 408)
+[M::mem_pestat] mean and std.dev: (108.76, 84.99)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 529)
+[M::process] read 532934 sequences (40000019 bp)...
+[M::mem_process_seqs] Processed 533050 reads in 43.926 CPU sec, 12.786 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6036, 16493, 2593, 5836)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (44, 86, 162)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 398)
+[M::mem_pestat] mean and std.dev: (104.78, 84.36)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 516)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (78, 145, 223)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 513)
+[M::mem_pestat] mean and std.dev: (157.48, 101.86)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 658)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (29, 68, 141)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 365)
+[M::mem_pestat] mean and std.dev: (86.54, 77.70)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 477)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (45, 91, 164)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 402)
+[M::mem_pestat] mean and std.dev: (107.86, 84.84)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 521)
+[M::process] read 532766 sequences (40000003 bp)...
+[M::mem_process_seqs] Processed 532934 reads in 44.126 CPU sec, 12.846 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6045, 16179, 2605, 5792)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (45, 90, 162)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 396)
+[M::mem_pestat] mean and std.dev: (106.11, 83.29)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 513)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (79, 147, 227)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 523)
+[M::mem_pestat] mean and std.dev: (160.60, 104.51)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 671)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (30, 69, 138)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 354)
+[M::mem_pestat] mean and std.dev: (84.83, 74.58)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 462)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (46, 92, 165)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 403)
+[M::mem_pestat] mean and std.dev: (108.78, 85.31)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 522)
+[M::process] read 532554 sequences (40000071 bp)...
+[M::mem_process_seqs] Processed 532766 reads in 43.894 CPU sec, 12.796 real sec
+[M::process] read 532486 sequences (40000092 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (5808, 16258, 2706, 5786)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (44, 89, 166)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 410)
+[M::mem_pestat] mean and std.dev: (107.49, 86.81)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 532)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (80, 149, 228)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 524)
+[M::mem_pestat] mean and std.dev: (161.12, 104.15)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 672)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (30, 69, 141)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 363)
+[M::mem_pestat] mean and std.dev: (88.32, 78.69)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 474)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (45, 89, 166)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 408)
+[M::mem_pestat] mean and std.dev: (107.30, 84.88)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 529)
+[M::mem_process_seqs] Processed 532554 reads in 44.159 CPU sec, 12.867 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6042, 16383, 2690, 5753)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (47, 93, 169)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 413)
+[M::mem_pestat] mean and std.dev: (110.96, 87.38)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 535)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (82, 151, 229)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 523)
+[M::mem_pestat] mean and std.dev: (162.89, 104.69)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 670)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (29, 70, 143)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 371)
+[M::mem_pestat] mean and std.dev: (89.23, 80.33)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 485)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (47, 93, 166)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 404)
+[M::mem_pestat] mean and std.dev: (109.05, 84.69)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 523)
+[M::process] read 532940 sequences (40000038 bp)...
+[M::mem_process_seqs] Processed 532486 reads in 43.971 CPU sec, 12.875 real sec
+[M::process] read 132196 sequences (9922808 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (5848, 16078, 2608, 5774)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (46, 93, 175)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 433)
+[M::mem_pestat] mean and std.dev: (112.43, 90.67)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 562)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (80, 154, 235)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 545)
+[M::mem_pestat] mean and std.dev: (165.71, 109.19)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 700)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (31, 70, 144)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 370)
+[M::mem_pestat] mean and std.dev: (88.71, 79.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 483)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (47, 96, 177)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 437)
+[M::mem_pestat] mean and std.dev: (115.20, 92.15)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 567)
+[M::mem_process_seqs] Processed 532940 reads in 43.174 CPU sec, 12.657 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (1414, 3880, 665, 1445)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (46, 91, 182)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 454)
+[M::mem_pestat] mean and std.dev: (115.36, 95.14)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 590)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (86, 158, 243)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 557)
+[M::mem_pestat] mean and std.dev: (170.49, 109.94)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 714)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (29, 70, 139)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 359)
+[M::mem_pestat] mean and std.dev: (87.61, 77.27)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 469)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (49, 99, 179)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 439)
+[M::mem_pestat] mean and std.dev: (118.12, 92.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 569)
+[M::mem_process_seqs] Processed 132196 reads in 10.627 CPU sec, 3.264 real sec
+[main] Version: 0.7.12-r1039
+[main] CMD: /home/elon/biosoft/bwa/0.7.12/bwa mem -t 4 -R @RG\tID:SRR3226035\tPL:illumina\tSM:E.coli_K12_SRR3226035 /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa SRR3226035_1.fastq.gz SRR3226035_2.fastq.gz
+[main] Real time: 95.750 sec; CPU: 318.154 sec
+
+real	1m36.580s
+user	6m0.745s
+sys	0m3.024s
+
+real	0m17.629s
+user	0m43.750s
+sys	0m0.568s
+Using GATK jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=1 -jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar MarkDuplicates -I SRR3226035.sorted.bam -O SRR3226035.sorted.markdup.bam -M SRR3226035.sorted.markup_metrics.txt
+21:58:08.650 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_compression.so
+[Wed Apr 11 21:58:08 CST 2018] MarkDuplicates  --INPUT SRR3226035.sorted.bam --OUTPUT SRR3226035.sorted.markdup.bam --METRICS_FILE SRR3226035.sorted.markup_metrics.txt  --MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP 50000 --MAX_FILE_HANDLES_FOR_READ_ENDS_MAP 8000 --SORTING_COLLECTION_SIZE_RATIO 0.25 --TAG_DUPLICATE_SET_MEMBERS false --REMOVE_SEQUENCING_DUPLICATES false --TAGGING_POLICY DontTag --CLEAR_DT true --ADD_PG_TAG_TO_READS true --REMOVE_DUPLICATES false --ASSUME_SORTED false --DUPLICATE_SCORING_STRATEGY SUM_OF_BASE_QUALITIES --PROGRAM_RECORD_ID MarkDuplicates --PROGRAM_GROUP_NAME MarkDuplicates --READ_NAME_REGEX <optimized capture of last three ':' separated fields as numeric values> --OPTICAL_DUPLICATE_PIXEL_DISTANCE 100 --MAX_OPTICAL_DUPLICATE_SET_SIZE 300000 --VERBOSITY INFO --QUIET false --VALIDATION_STRINGENCY STRICT --COMPRESSION_LEVEL 1 --MAX_RECORDS_IN_RAM 500000 --CREATE_INDEX false --CREATE_MD5_FILE false --GA4GH_CLIENT_SECRETS client_secrets.json --help false --version false --showHidden false --USE_JDK_DEFLATER false --USE_JDK_INFLATER false
+[Wed Apr 11 21:58:08 CST 2018] Executing as elon@longsl on Linux 4.13.0-38-generic amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_161-b12; Deflater: Intel; Inflater: Intel; Picard version: Version:4.0.2.1
+INFO	2018-04-11 21:58:08	MarkDuplicates	Start of doWork freeMemory: 189626608; totalMemory: 198705152; maxMemory: 1756364800
+INFO	2018-04-11 21:58:08	MarkDuplicates	Reading input file and constructing read end information.
+INFO	2018-04-11 21:58:08	MarkDuplicates	Will retain up to 6363640 data points before spilling to disk.
+WARNING	2018-04-11 21:58:08	AbstractOpticalDuplicateFinderCommandLineProgram	A field field parsed out of a read name was expected to contain an integer and did not. Read name: SRR3226035.53162. Cause: String 'SRR3226035.53162' did not start with a parsable number.
+INFO	2018-04-11 21:58:12	MarkDuplicates	Read 549161 records. 0 pairs never matched.
+INFO	2018-04-11 21:58:12	MarkDuplicates	After buildSortedReadEndLists freeMemory: 425454968; totalMemory: 542638080; maxMemory: 1756364800
+INFO	2018-04-11 21:58:12	MarkDuplicates	Will retain up to 54886400 duplicate indices before spilling to disk.
+INFO	2018-04-11 21:58:13	MarkDuplicates	Traversing read pair information and detecting duplicates.
+INFO	2018-04-11 21:58:13	MarkDuplicates	Traversing fragment information and detecting duplicates.
+INFO	2018-04-11 21:58:13	MarkDuplicates	Sorting list of duplicate records.
+INFO	2018-04-11 21:58:13	MarkDuplicates	After generateDuplicateIndexes freeMemory: 530472256; totalMemory: 983040000; maxMemory: 1756364800
+INFO	2018-04-11 21:58:13	MarkDuplicates	Marking 9881 records as duplicates.
+INFO	2018-04-11 21:58:13	MarkDuplicates	Found 0 optical duplicate clusters.
+INFO	2018-04-11 21:58:13	MarkDuplicates	Reads are assumed to be ordered by: coordinate
+INFO	2018-04-11 21:58:27	MarkDuplicates	Before output close freeMemory: 1138312672; totalMemory: 1157103616; maxMemory: 1756364800
+INFO	2018-04-11 21:58:27	MarkDuplicates	After output close freeMemory: 1151528096; totalMemory: 1166016512; maxMemory: 1756364800
+[Wed Apr 11 21:58:27 CST 2018] picard.sam.markduplicates.MarkDuplicates done. Elapsed time: 0.31 minutes.
+Runtime.totalMemory()=1166016512
+
+real	0m21.340s
+user	0m39.843s
+sys	0m2.846s
+
+real	0m3.726s
+user	0m3.676s
+sys	0m0.052s
+Using GATK jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=1 -jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar HaplotypeCaller -R /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa --emit-ref-confidence GVCF -I SRR3226035.sorted.markdup.bam -O SRR3226035.g.vcf
+21:58:33.715 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_compression.so
+21:58:33.875 INFO  HaplotypeCaller - ------------------------------------------------------------
+21:58:33.876 INFO  HaplotypeCaller - The Genome Analysis Toolkit (GATK) v4.0.2.1
+21:58:33.876 INFO  HaplotypeCaller - For support and documentation go to https://software.broadinstitute.org/gatk/
+21:58:33.876 INFO  HaplotypeCaller - Executing as elon@longsl on Linux v4.13.0-38-generic amd64
+21:58:33.876 INFO  HaplotypeCaller - Java runtime: Java HotSpot(TM) 64-Bit Server VM v1.8.0_161-b12
+21:58:33.876 INFO  HaplotypeCaller - Start Date/Time: 2018年4月11日 下午09时58分33秒
+21:58:33.876 INFO  HaplotypeCaller - ------------------------------------------------------------
+21:58:33.876 INFO  HaplotypeCaller - ------------------------------------------------------------
+21:58:33.877 INFO  HaplotypeCaller - HTSJDK Version: 2.14.3
+21:58:33.877 INFO  HaplotypeCaller - Picard Version: 2.17.2
+21:58:33.877 INFO  HaplotypeCaller - HTSJDK Defaults.COMPRESSION_LEVEL : 1
+21:58:33.877 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+21:58:33.877 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+21:58:33.877 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+21:58:33.877 INFO  HaplotypeCaller - Deflater: IntelDeflater
+21:58:33.877 INFO  HaplotypeCaller - Inflater: IntelInflater
+21:58:33.877 INFO  HaplotypeCaller - GCS max retries/reopens: 20
+21:58:33.877 INFO  HaplotypeCaller - Using google-cloud-java patch 6d11bef1c81f885c26b2b56c8616b7a705171e4f from https://github.com/droazen/google-cloud-java/tree/dr_all_nio_fixes
+21:58:33.877 INFO  HaplotypeCaller - Initializing engine
+21:58:34.302 INFO  HaplotypeCaller - Done initializing engine
+21:58:34.306 INFO  HaplotypeCallerEngine - Standard Emitting and Calling confidence set to 0.0 for reference-model confidence output
+21:58:34.306 INFO  HaplotypeCallerEngine - All sites annotated with PLs forced to true for reference-model confidence output
+21:58:34.908 INFO  NativeLibraryLoader - Loading libgkl_utils.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_utils.so
+21:58:34.909 INFO  NativeLibraryLoader - Loading libgkl_pairhmm_omp.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_pairhmm_omp.so
+21:58:34.959 WARN  IntelPairHmm - Flush-to-zero (FTZ) is enabled when running PairHMM
+21:58:34.959 INFO  IntelPairHmm - Available threads: 4
+21:58:34.960 INFO  IntelPairHmm - Requested threads: 4
+21:58:34.960 INFO  PairHMM - Using the OpenMP multi-threaded AVX-accelerated native PairHMM implementation
+21:58:35.011 INFO  ProgressMeter - Starting traversal
+21:58:35.011 INFO  ProgressMeter -        Current Locus  Elapsed Minutes     Regions Processed   Regions/Minute
+21:58:45.238 INFO  ProgressMeter -    NC_000913.3:27631              0.2                   210           1232.0
+21:58:55.310 INFO  ProgressMeter -    NC_000913.3:65127              0.3                   500           1477.9
+21:59:04.426 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:59:04.426 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:59:05.747 INFO  ProgressMeter -   NC_000913.3:115554              0.5                   870           1698.3
+21:59:16.193 INFO  ProgressMeter -   NC_000913.3:156355              0.7                  1180           1719.2
+21:59:31.558 INFO  ProgressMeter -   NC_000913.3:225406              0.9                  1710           1814.4
+21:59:43.656 INFO  ProgressMeter -   NC_000913.3:229143              1.1                  1730           1512.1
+21:59:50.434 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:59:50.434 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:59:55.454 INFO  ProgressMeter -   NC_000913.3:268467              1.3                  2020           1506.7
+22:00:08.729 INFO  ProgressMeter -   NC_000913.3:318739              1.6                  2370           1517.3
+22:00:18.994 INFO  ProgressMeter -   NC_000913.3:384396              1.7                  2850           1644.5
+22:00:29.133 INFO  ProgressMeter -   NC_000913.3:450656              1.9                  3340           1756.0
+22:00:29.144 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:00:29.144 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:00:39.143 INFO  ProgressMeter -   NC_000913.3:508187              2.1                  3770           1822.3
+22:00:49.364 INFO  ProgressMeter -   NC_000913.3:571096              2.2                  4240           1893.5
+22:00:49.968 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:00:49.968 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:00:49.968 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:00:49.968 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:00:49.969 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:00:49.969 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:00:49.969 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:00:49.969 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:00:49.969 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:00:49.969 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:00:59.428 INFO  ProgressMeter -   NC_000913.3:651578              2.4                  4820           2002.5
+22:01:09.464 INFO  ProgressMeter -   NC_000913.3:695596              2.6                  5150           2000.6
+22:01:19.896 INFO  ProgressMeter -   NC_000913.3:734857              2.7                  5450           1983.2
+22:01:28.194 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:01:28.194 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:01:30.943 INFO  ProgressMeter -   NC_000913.3:771756              2.9                  5700           1943.9
+22:01:39.192 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:01:39.192 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:01:39.980 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:01:39.980 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:01:39.981 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:01:39.981 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:01:40.965 INFO  ProgressMeter -   NC_000913.3:849296              3.1                  6300           2032.8
+22:01:51.131 INFO  ProgressMeter -   NC_000913.3:927166              3.3                  6860           2098.7
+22:01:55.229 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:01:55.229 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:02:01.139 INFO  ProgressMeter -  NC_000913.3:1002664              3.4                  7410           2156.9
+22:02:11.143 INFO  ProgressMeter -  NC_000913.3:1077663              3.6                  7980           2215.3
+22:02:21.417 INFO  ProgressMeter -  NC_000913.3:1103752              3.8                  8170           2165.1
+22:02:31.664 INFO  ProgressMeter -  NC_000913.3:1181413              3.9                  8740           2215.9
+22:02:42.307 INFO  ProgressMeter -  NC_000913.3:1213302              4.1                  8980           2178.8
+22:02:52.413 INFO  ProgressMeter -  NC_000913.3:1253131              4.3                  9280           2163.2
+22:03:02.430 INFO  ProgressMeter -  NC_000913.3:1306048              4.5                  9670           2169.6
+22:03:10.476 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:03:10.476 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:03:10.476 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:03:10.476 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:03:10.476 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:03:10.477 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:03:12.632 INFO  ProgressMeter -  NC_000913.3:1383576              4.6                 10200           2204.4
+22:03:18.491 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:03:18.491 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:03:23.115 INFO  ProgressMeter -  NC_000913.3:1473355              4.8                 10850           2259.6
+22:03:34.501 INFO  ProgressMeter -  NC_000913.3:1532283              5.0                 11280           2259.8
+22:03:36.909 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:03:36.909 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:03:44.557 INFO  ProgressMeter -  NC_000913.3:1615621              5.2                 11900           2306.6
+22:03:55.459 INFO  ProgressMeter -  NC_000913.3:1656687              5.3                 12200           2284.3
+22:04:05.556 INFO  ProgressMeter -  NC_000913.3:1730842              5.5                 12740           2312.5
+22:04:06.993 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:04:06.994 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+22:04:10.460 INFO  HaplotypeCaller - 36374 read(s) filtered by: ((((((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter) AND NonZeroReferenceLengthAlignmentReadFilter) AND GoodCigarReadFilter) AND WellformedReadFilter)
+  36374 read(s) filtered by: (((((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter) AND NonZeroReferenceLengthAlignmentReadFilter) AND GoodCigarReadFilter)
+      36374 read(s) filtered by: ((((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter) AND NonZeroReferenceLengthAlignmentReadFilter)
+          36374 read(s) filtered by: (((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter)
+              36374 read(s) filtered by: ((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter)
+                  27877 read(s) filtered by: (((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter)
+                      27877 read(s) filtered by: ((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter)
+                          27877 read(s) filtered by: (MappingQualityReadFilter AND MappingQualityAvailableReadFilter)
+                              27877 read(s) filtered by: MappingQualityReadFilter 
+                  8497 read(s) filtered by: NotDuplicateReadFilter 
+
+22:04:10.460 INFO  ProgressMeter -  NC_000913.3:1769173              5.6                 13021           2329.0
+22:04:10.460 INFO  ProgressMeter - Traversal complete. Processed 13021 total regions in 5.6 minutes.
+22:04:10.503 INFO  VectorLoglessPairHMM - Time spent in setup for JNI call : 0.279843096
+22:04:10.504 INFO  PairHMM - Total compute time in PairHMM computeLogLikelihoods() : 92.63166383500001
+22:04:10.504 INFO  SmithWatermanAligner - Total compute time in java Smith-Waterman : 109.64 sec
+22:04:10.504 INFO  HaplotypeCaller - Shutting down engine
+[2018年4月11日 下午10时04分10秒] org.broadinstitute.hellbender.tools.walkers.haplotypecaller.HaplotypeCaller done. Elapsed time: 5.61 minutes.
+Runtime.totalMemory()=760741888
+
+real	5m39.500s
+user	11m38.773s
+sys	0m1.326s
+18/04/11 22:04:11 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+put: `/wgsv2/output/gvcf/SRR3226035.g.vcf': File exists
