@@ -9,8 +9,8 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>wgsv2</module>
         <module>wgsv1</module>
+        <module>wgsv2</module>
         <module>wgsv3</module>
     </modules>
 

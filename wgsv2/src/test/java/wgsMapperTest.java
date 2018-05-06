@@ -8,7 +8,7 @@ import java.io.IOException;
 public class wgsMapperTest {
 
     /*
-        测试比对脚本
+        测试Mapper
      */
     @Test
     public void wgs() throws IOException {

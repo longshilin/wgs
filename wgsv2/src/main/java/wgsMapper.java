@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 /*
-    编写比对的mapper类
+    编写全基因组测序的Mapper类
  */
 public class wgsMapper extends Mapper<LongWritable, Text, Text, Text> {
 
@@ -20,10 +20,7 @@ public class wgsMapper extends Mapper<LongWritable, Text, Text, Text> {
         String sample_name = value.toString();
         wgs(sample_name);
         context.write(new Text("1"),new Text(sample_name));
-
-
     }
-
 
     private static void wgs(String sampleName) {
 
@@ -40,8 +37,5 @@ public class wgsMapper extends Mapper<LongWritable, Text, Text, Text> {
         if (scriptFile != null) {
             ShellScriptUtil.callProcess(scriptPath, logPath);
         }
-
-
     }
-
 }

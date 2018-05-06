@@ -6,12 +6,13 @@ import java.io.File;
 public class ShellScriptUtil {
 
     /**
-     * Usage: scriptUtil  -shellScript  [-outputFile]  [-logFile]
-     * 执行shellPath指定的脚本，shellScript参数是必须指定的
-     * 另外两个是可选的，当不指定时默认输出方式
-     * 其中shell脚本中的输出信息保存在outputFile,错误日志信息保存在logFile
      *
-     * @param paths 指定多个路径
+     * 调用Shell脚本执行的方法
+     *
+     * @param paths 指定多个路径参数
+     *              <ul><li>其中第一个指定的是shell模版</li>
+     *              <li>第二个参数指定的是脚本执行结果存放路径</li>
+     *              <li>第三个参数指定的是执行脚本中日志存放路径，是可选参数，未给出此参数则默认为无日志输出</li></ul>
      */
     public static void callProcess(String... paths) {
         File outputFile;
@@ -31,16 +32,15 @@ public class ShellScriptUtil {
         ProcessBuilder pb = new ProcessBuilder("./" + scriptPath);
         pb.inheritIO();
 
+        // 指定shell脚本执行的结果输出路径和执行时日志文件的输出路径
         if (paths.length == 3) {
             outputFile = new File(paths[1]);
-            // shell脚本执行结果输出
             pb.redirectOutput(outputFile);
-            // shell脚本错误日志输出
             logFile = new File(paths[2]);
             pb.redirectError(logFile);
         }
+        // 指定shell脚本执行的结果输出路径
         if (paths.length == 2) {
-            // shell脚本错误日志输出
             logFile = new File(paths[1]);
             if(logFile.exists())
                 logFile.delete();

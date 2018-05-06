@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 /*
-    编写比对的mapper类
+    编写全基因组测序的Reducer类
  */
 public class wgsReducer extends Reducer<Text, Text, Text, Text> {
 
@@ -24,15 +24,12 @@ public class wgsReducer extends Reducer<Text, Text, Text, Text> {
         while (value.hasNext()) {
             str = value.next().toString();
             templateMap.put("sample_name" + (++count), str);
-            System.out.println("sample_name" + count + "-----" + str);
         }
-        templateMap.put("sample_num",String.valueOf(count));
         mergeGVCF(templateMap);
         context.write(new Text("1"), new Text(str));
     }
 
     private static void mergeGVCF(HashMap<String, String> templateMap) {
-
 
         String template = "wgsReducer.template";
         String scriptPath = SCRIPT_DIRECTORY + "/wgs_reducer_" + ".sh";

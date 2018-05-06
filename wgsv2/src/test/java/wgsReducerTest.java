@@ -1,13 +1,12 @@
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mrunit.mapreduce.ReduceDriver;
 import org.junit.Test;
-
 import java.io.IOException;
 import java.util.Arrays;
 
 public class wgsReducerTest {
     /*
-        测试比对脚本
+        测试Reducer
      */
     @Test
     public void merge() throws IOException {
