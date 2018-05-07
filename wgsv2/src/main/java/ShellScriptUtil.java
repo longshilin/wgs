@@ -1,16 +1,22 @@
 import java.io.File;
+import java.io.IOException;
+import org.apache.log4j.Logger;
 
 /**
  * shell脚本工具包
  */
 public class ShellScriptUtil {
 
+    // 日志记录
+    private static Logger theLogger = Logger.getLogger(TemplateEngine.class.getName());
+
     /**
      * 调用Shell脚本执行的方法
+     *
      * @param paths 指定多个路径参数
-     *              <ul><li>其中第一个指定的是shell模版</li>
-     *              <li>第二个参数指定的是脚本执行结果存放路径</li>
-     *              <li>第三个参数指定的是执行脚本中日志存放路径，是可选参数，未给出此参数则默认为无日志输出</li></ul>
+     * <ul><li>其中第一个指定的是shell模版</li>
+     * <li>第二个参数指定的是脚本执行结果存放路径</li>
+     * <li>第三个参数指定的是执行脚本中日志存放路径，是可选参数，未给出此参数则默认为无日志输出</li></ul>
      */
     public static void callProcess(String... paths) {
         File outputFile;
@@ -37,18 +43,21 @@ public class ShellScriptUtil {
             logFile = new File(paths[2]);
             pb.redirectError(logFile);
         }
-        // 指定shell脚本执行的结果输出路径
+        // 指定shell脚本执行的日志输出路径
         if (paths.length == 2) {
             logFile = new File(paths[1]);
-            if(logFile.exists())
+            if (logFile.exists()) {
                 logFile.delete();
+            }
             pb.redirectError(logFile);
         }
         try {
             process = pb.start();
             process.waitFor();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            theLogger.error("发生I/O错误...");
+        } catch (InterruptedException e) {
+            theLogger.error("当前线程在等待时被另一个线程中断...");
         }
     }
 }

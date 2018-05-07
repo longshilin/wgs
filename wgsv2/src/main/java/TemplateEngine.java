@@ -36,7 +36,6 @@ public class TemplateEngine {
         if (!initialized.get()) {
             try {
                 init();
-                theLogger.info("模版引擎初始化...");
             } catch (Exception e) {
                 theLogger.error("在初始化阶段，模版引擎初始化错误...", e);
             }
@@ -84,7 +83,6 @@ public class TemplateEngine {
                 try {
                     writer.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
                     theLogger.error("创建shell脚本，写入文件时出现IO异常...");
                 }
             }
