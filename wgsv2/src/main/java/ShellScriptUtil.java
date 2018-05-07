@@ -6,9 +6,7 @@ import java.io.File;
 public class ShellScriptUtil {
 
     /**
-     *
      * 调用Shell脚本执行的方法
-     *
      * @param paths 指定多个路径参数
      *              <ul><li>其中第一个指定的是shell模版</li>
      *              <li>第二个参数指定的是脚本执行结果存放路径</li>
