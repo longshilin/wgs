@@ -1,23 +1,34 @@
 #!/bin/bash
 
 # Author: elon
-# Description: 一个合并GVCF文件的模板
+# Description: 合并所有样本的GVCF文件的模板
 # Time: 2018-4-5
 
 # 该脚本需要完成的是对各个样本分区的VCGF文件做一个merge操作
-export SAMTOOLS=/home/elon/biosoft/samtools/1.0/bin
-export GATK=/home/elon/biosoft/gatk/3.6/GenomeAnalysisTK.jar
-export HADOOP=/home/elon/hadoop/bin
+export SAMTOOLS=~/biosoft/samtools/1.0/bin
+export GATK=~/biosoft/gatk/3.6/GenomeAnalysisTK.jar
+export HADOOP=~/hadoop/bin
 
 # 定义参考序列
-export REF=/home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa
-
-echo "* * * * 开始合并处理样本 ${sample_name1} ${sample_name2} ${sample_name3} * * * *"
+export REF=~/wgs/input/fasta/E.coli_K12_MG1655.fa
+# 定义单个节点可利用的线程数
+THREAD=4
+# 定义单个节点可利用的内存资源
+MEMORY=6G
+echo "############" `date "+%Y-%m-%d %H:%M:%S"` "############"
+echo "--- 开始合并处理样本 ${sample_name1} ${sample_name2} ${sample_name3} ${sample_name4} ${sample_name4} ${sample_name5} ${sample_name6} ${sample_name7} ${sample_name8} ${sample_name9} ---"
 
 # 定义模板变量
 INPUT_FILE1=${sample_name1}.g.vcf
 INPUT_FILE2=${sample_name2}.g.vcf
 INPUT_FILE3=${sample_name3}.g.vcf
+INPUT_FILE4=${sample_name4}.g.vcf
+INPUT_FILE5=${sample_name5}.g.vcf
+INPUT_FILE6=${sample_name6}.g.vcf
+INPUT_FILE7=${sample_name7}.g.vcf
+INPUT_FILE8=${sample_name8}.g.vcf
+INPUT_FILE9=${sample_name9}.g.vcf
+
 
 cd /tmp
 
@@ -25,18 +36,44 @@ cd /tmp
 $HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE1
 $HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE2
 $HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE3
-echo "* * * * download all gvcf done..."
+$HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE4
+$HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE5
+$HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE6
+$HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE7
+$HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE8
+$HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE9
+echo "*** 从HDFS上获取所有相关的gVCF文件"
 
-# merge all gvcf files -- E_coli_K12.vcf
-time java -jar $GATK -T GenotypeGVCFs -nt 4 -R $REF --variant $INPUT_FILE1 --variant $INPUT_FILE2 \
---variant $INPUT_FILE3 -o E_coli_K12.vcf && echo "* * * * merge gvcf done..."
+# 合并所有的gVCF文件为VCF文件 -- E_coli_K12.vcf
+echo "###COMMAND LINE###：" >&2
+echo "java -jar $GATK -T GenotypeGVCFs -nt $THREAD -R $REF --variant $INPUT_FILE1 --variant $INPUT_FILE2 \
+--variant $INPUT_FILE3 --variant $INPUT_FILE4 --variant $INPUT_FILE5 --variant $INPUT_FILE6 \
+--variant $INPUT_FILE7 --variant $INPUT_FILE8 --variant $INPUT_FILE9 \
+-o E_coli_K12.vcf" >&2
+time java -jar $GATK -T GenotypeGVCFs -nt $THREAD -R $REF --variant $INPUT_FILE1 --variant $INPUT_FILE2 \
+--variant $INPUT_FILE3 --variant $INPUT_FILE4 --variant $INPUT_FILE5 --variant $INPUT_FILE6 \
+--variant $INPUT_FILE7 --variant $INPUT_FILE8 --variant $INPUT_FILE9 \
+-o E_coli_K12.vcf 1>&2 && echo "*** 合并所有的gVCF文件为VCF文件" && echo "">&2
 
-## 1.为vcf文件压缩
-time bgzip -f E_coli_K12.vcf
+## 1.将vcf文件压缩
+echo "###COMMAND LINE###：" >&2
+echo "bgzip -f E_coli_K12.vcf" >&2
+time bgzip -f E_coli_K12.vcf && echo "*** 将vcf文件进行压缩" && echo "">&2
 
 ## 2.构建tabix索引
-time $SAMTOOLS/tabix -p vcf E_coli_K12.vcf.gz
+echo "###COMMAND LINE###：" >&2
+echo "$SAMTOOLS/tabix -p vcf E_coli_K12.vcf.gz" >&2
+time $SAMTOOLS/tabix -p vcf E_coli_K12.vcf.gz \
+&& echo "*** 给压缩文件构建tabix索引" && echo "">&2
+
 
 ## 3. 上传最终的VCF文件以及索引文件到HDFS上
-$HADOOP/hadoop fs -put E_coli_K12.vcf.gz* /wgsv2/output/vcf \
-&& echo "* * * * 变异检测结果vcf文件上传到HDFS上..."
+echo "###COMMAND LINE###：" >&2
+echo "$HADOOP/hadoop fs -f -put E_coli_K12.vcf.gz* /wgsv2/output/vcf" >&2
+time $HADOOP/hadoop fs -f -put E_coli_K12.vcf.gz* /wgsv2/output/vcf \
+&& echo "*** 变异检测结果vcf文件上传到HDFS上" && echo "">&2
+
+rm -f E_coli_K12.vcf* *g.vcf*
+
+echo "############" `date "+%Y-%m-%d %H:%M:%S"` "############"
+echo "--- 结束处理样本 ${sample_name} ---" && echo "" >&2

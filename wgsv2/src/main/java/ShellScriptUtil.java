@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+
 import org.apache.log4j.Logger;
 
 /**
@@ -14,9 +15,9 @@ public class ShellScriptUtil {
      * 调用Shell脚本执行的方法
      *
      * @param paths 指定多个路径参数
-     * <ul><li>其中第一个指定的是shell模版</li>
-     * <li>第二个参数指定的是脚本执行结果存放路径</li>
-     * <li>第三个参数指定的是执行脚本中日志存放路径，是可选参数，未给出此参数则默认为无日志输出</li></ul>
+     *              <ul><li>其中第一个指定的是shell模版</li>
+     *              <li>第二个参数指定的是脚本执行结果存放路径</li>
+     *              <li>第三个参数指定的是执行脚本中日志存放路径，是可选参数，未给出此参数则默认为无日志输出</li></ul>
      */
     public static void callProcess(String... paths) {
         File outputFile;
@@ -32,7 +33,7 @@ public class ShellScriptUtil {
             e.printStackTrace();
         }
 
-        System.out.println(scriptPath);
+        System.out.println("执行脚本：" + scriptPath);
         ProcessBuilder pb = new ProcessBuilder("./" + scriptPath);
         pb.inheritIO();
 

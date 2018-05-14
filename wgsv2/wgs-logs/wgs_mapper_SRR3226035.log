@@ -1,18 +1,19 @@
 ###COMMAND LINE###：
 /home/elon/hadoop/bin/hadoop fs -get /wgsv2/input/fastq/SRR3226035_1.fastq.gz
-18/05/14 00:30:03 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/05/14 21:10:09 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+get: `SRR3226035_1.fastq.gz': File exists
 
-real	0m3.076s
-user	0m4.801s
-sys	0m0.366s
-
+real	0m2.008s
+user	0m3.847s
+sys	0m0.108s
 ###COMMAND LINE###：
 /home/elon/hadoop/bin/hadoop fs -get /wgsv2/input/fastq/SRR3226035_2.fastq.gz
-18/05/14 00:30:06 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/05/14 21:10:11 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+get: `SRR3226035_2.fastq.gz': File exists
 
-real	0m3.387s
-user	0m4.956s
-sys	0m0.392s
+real	0m1.908s
+user	0m3.684s
+sys	0m0.165s
 
 ###COMMAND LINE###：
 /home/elon/biosoft/bwa/0.7.12/bwa mem -t 4 -R @RG\tID:SRR3226035\tPL:illumina\tSM:E.coli_K12_SRR3226035 /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa SRR3226035_1.fastq.gz SRR3226035_2.fastq.gz | /home/elon/biosoft/samtools/1.0/bin/samtools view -Sb - > SRR3226035.bam
@@ -40,7 +41,7 @@ sys	0m0.392s
 [M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 405)
 [M::mem_pestat] mean and std.dev: (107.30, 84.97)
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 525)
-[M::mem_process_seqs] Processed 533018 reads in 43.432 CPU sec, 11.216 real sec
+[M::mem_process_seqs] Processed 533018 reads in 43.526 CPU sec, 11.431 real sec
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6143, 16429, 2710, 5755)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
 [M::mem_pestat] (25, 50, 75) percentile: (46, 87, 164)
@@ -63,7 +64,7 @@ sys	0m0.392s
 [M::mem_pestat] mean and std.dev: (108.76, 84.99)
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 529)
 [M::process] read 532934 sequences (40000019 bp)...
-[M::mem_process_seqs] Processed 533050 reads in 44.523 CPU sec, 14.469 real sec
+[M::mem_process_seqs] Processed 533050 reads in 44.233 CPU sec, 13.179 real sec
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6036, 16493, 2593, 5836)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
 [M::mem_pestat] (25, 50, 75) percentile: (44, 86, 162)
@@ -86,7 +87,7 @@ sys	0m0.392s
 [M::mem_pestat] mean and std.dev: (107.86, 84.84)
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 521)
 [M::process] read 532766 sequences (40000003 bp)...
-[M::mem_process_seqs] Processed 532934 reads in 44.404 CPU sec, 13.201 real sec
+[M::mem_process_seqs] Processed 532934 reads in 44.209 CPU sec, 13.062 real sec
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6045, 16179, 2605, 5792)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
 [M::mem_pestat] (25, 50, 75) percentile: (45, 90, 162)
@@ -109,7 +110,8 @@ sys	0m0.392s
 [M::mem_pestat] mean and std.dev: (108.78, 85.31)
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 522)
 [M::process] read 532554 sequences (40000071 bp)...
-[M::mem_process_seqs] Processed 532766 reads in 44.064 CPU sec, 13.022 real sec
+[M::mem_process_seqs] Processed 532766 reads in 44.037 CPU sec, 12.943 real sec
+[M::process] read 532486 sequences (40000092 bp)...
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (5808, 16258, 2706, 5786)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
 [M::mem_pestat] (25, 50, 75) percentile: (44, 89, 166)
@@ -131,8 +133,7 @@ sys	0m0.392s
 [M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 408)
 [M::mem_pestat] mean and std.dev: (107.30, 84.88)
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 529)
-[M::process] read 532486 sequences (40000092 bp)...
-[M::mem_process_seqs] Processed 532554 reads in 44.290 CPU sec, 13.088 real sec
+[M::mem_process_seqs] Processed 532554 reads in 44.259 CPU sec, 12.984 real sec
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (6042, 16383, 2690, 5753)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
 [M::mem_pestat] (25, 50, 75) percentile: (47, 93, 169)
@@ -155,7 +156,7 @@ sys	0m0.392s
 [M::mem_pestat] mean and std.dev: (109.05, 84.69)
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 523)
 [M::process] read 532940 sequences (40000038 bp)...
-[M::mem_process_seqs] Processed 532486 reads in 44.154 CPU sec, 13.077 real sec
+[M::mem_process_seqs] Processed 532486 reads in 44.072 CPU sec, 12.953 real sec
 [M::process] read 132196 sequences (9922808 bp)...
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (5848, 16078, 2608, 5774)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
@@ -178,7 +179,7 @@ sys	0m0.392s
 [M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 437)
 [M::mem_pestat] mean and std.dev: (115.20, 92.15)
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 567)
-[M::mem_process_seqs] Processed 532940 reads in 43.371 CPU sec, 12.868 real sec
+[M::mem_process_seqs] Processed 532940 reads in 43.198 CPU sec, 12.707 real sec
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (1414, 3880, 665, 1445)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
 [M::mem_pestat] (25, 50, 75) percentile: (46, 91, 182)
@@ -200,190 +201,136 @@ sys	0m0.392s
 [M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 439)
 [M::mem_pestat] mean and std.dev: (118.12, 92.00)
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 569)
-[M::mem_process_seqs] Processed 132196 reads in 10.692 CPU sec, 3.306 real sec
+[M::mem_process_seqs] Processed 132196 reads in 10.770 CPU sec, 3.516 real sec
 [main] Version: 0.7.12-r1039
 [main] CMD: /home/elon/biosoft/bwa/0.7.12/bwa mem -t 4 -R @RG\tID:SRR3226035\tPL:illumina\tSM:E.coli_K12_SRR3226035 /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa SRR3226035_1.fastq.gz SRR3226035_2.fastq.gz
-[main] Real time: 99.071 sec; CPU: 320.114 sec
+[main] Real time: 96.926 sec; CPU: 319.467 sec
 
-real	1m39.772s
-user	6m1.591s
-sys	0m3.894s
+real	1m37.916s
+user	6m0.563s
+sys	0m4.220s
 
 ###COMMAND LINE###：
 /home/elon/biosoft/samtools/1.0/bin/samtools sort -@ 4 -m 4G -O bam -o SRR3226035.sorted.bam SRR3226035.bam -T PREFIX.bam
 
-real	0m16.195s
-user	0m43.562s
-sys	0m0.707s
+real	0m17.325s
+user	0m44.549s
+sys	0m0.648s
 
 ###COMMAND LINE###：
 /home/elon/biosoft/gatk/4.0/gatk MarkDuplicates -I SRR3226035.sorted.bam -O SRR3226035.sorted.markdup.bam -M SRR3226035.sorted.markup_metrics.txt
 Using GATK jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar
 Running:
-    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=1 -jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar MarkDuplicates -I SRR3226035.sorted.bam -O SRR3226035.sorted.markdup.bam -M SRR3226035.sorted.markup_metrics.txt
-00:32:08.923 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_compression.so
-[Mon May 14 00:32:08 CST 2018] MarkDuplicates  --INPUT SRR3226035.sorted.bam --OUTPUT SRR3226035.sorted.markdup.bam --METRICS_FILE SRR3226035.sorted.markup_metrics.txt  --MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP 50000 --MAX_FILE_HANDLES_FOR_READ_ENDS_MAP 8000 --SORTING_COLLECTION_SIZE_RATIO 0.25 --TAG_DUPLICATE_SET_MEMBERS false --REMOVE_SEQUENCING_DUPLICATES false --TAGGING_POLICY DontTag --CLEAR_DT true --ADD_PG_TAG_TO_READS true --REMOVE_DUPLICATES false --ASSUME_SORTED false --DUPLICATE_SCORING_STRATEGY SUM_OF_BASE_QUALITIES --PROGRAM_RECORD_ID MarkDuplicates --PROGRAM_GROUP_NAME MarkDuplicates --READ_NAME_REGEX <optimized capture of last three ':' separated fields as numeric values> --OPTICAL_DUPLICATE_PIXEL_DISTANCE 100 --MAX_OPTICAL_DUPLICATE_SET_SIZE 300000 --VERBOSITY INFO --QUIET false --VALIDATION_STRINGENCY STRICT --COMPRESSION_LEVEL 1 --MAX_RECORDS_IN_RAM 500000 --CREATE_INDEX false --CREATE_MD5_FILE false --GA4GH_CLIENT_SECRETS client_secrets.json --help false --version false --showHidden false --USE_JDK_DEFLATER false --USE_JDK_INFLATER false
-[Mon May 14 00:32:08 CST 2018] Executing as elon@longsl on Linux 4.13.0-39-generic amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_161-b12; Deflater: Intel; Inflater: Intel; Picard version: Version:4.0.2.1
-INFO	2018-05-14 00:32:09	MarkDuplicates	Start of doWork freeMemory: 192643528; totalMemory: 201850880; maxMemory: 1756364800
-INFO	2018-05-14 00:32:09	MarkDuplicates	Reading input file and constructing read end information.
-INFO	2018-05-14 00:32:09	MarkDuplicates	Will retain up to 6363640 data points before spilling to disk.
-WARNING	2018-05-14 00:32:09	AbstractOpticalDuplicateFinderCommandLineProgram	A field field parsed out of a read name was expected to contain an integer and did not. Read name: SRR3226035.53162. Cause: String 'SRR3226035.53162' did not start with a parsable number.
-INFO	2018-05-14 00:32:13	MarkDuplicates	Read 549161 records. 0 pairs never matched.
-INFO	2018-05-14 00:32:14	MarkDuplicates	After buildSortedReadEndLists freeMemory: 493182704; totalMemory: 611844096; maxMemory: 1756364800
-INFO	2018-05-14 00:32:14	MarkDuplicates	Will retain up to 54886400 duplicate indices before spilling to disk.
-INFO	2018-05-14 00:32:14	MarkDuplicates	Traversing read pair information and detecting duplicates.
-INFO	2018-05-14 00:32:14	MarkDuplicates	Traversing fragment information and detecting duplicates.
-INFO	2018-05-14 00:32:14	MarkDuplicates	Sorting list of duplicate records.
-INFO	2018-05-14 00:32:14	MarkDuplicates	After generateDuplicateIndexes freeMemory: 597151144; totalMemory: 1051197440; maxMemory: 1756364800
-INFO	2018-05-14 00:32:14	MarkDuplicates	Marking 9881 records as duplicates.
-INFO	2018-05-14 00:32:14	MarkDuplicates	Found 0 optical duplicate clusters.
-INFO	2018-05-14 00:32:14	MarkDuplicates	Reads are assumed to be ordered by: coordinate
-INFO	2018-05-14 00:32:28	MarkDuplicates	Before output close freeMemory: 1210777760; totalMemory: 1231028224; maxMemory: 1756364800
-INFO	2018-05-14 00:32:28	MarkDuplicates	After output close freeMemory: 1223917760; totalMemory: 1239416832; maxMemory: 1756364800
-[Mon May 14 00:32:28 CST 2018] picard.sam.markduplicates.MarkDuplicates done. Elapsed time: 0.33 minutes.
-Runtime.totalMemory()=1239416832
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=1 -jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar MarkDuplicates -I SRR3226035.sorted.bam -O SRR3226035.sorted.markdup.bam -M SRR3226035.sorted.markdup_metrics.txt
+21:12:24.192 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_compression.so
+[Mon May 14 21:12:24 CST 2018] MarkDuplicates  --INPUT SRR3226035.sorted.bam --OUTPUT SRR3226035.sorted.markdup.bam --METRICS_FILE SRR3226035.sorted.markdup_metrics.txt  --MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP 50000 --MAX_FILE_HANDLES_FOR_READ_ENDS_MAP 8000 --SORTING_COLLECTION_SIZE_RATIO 0.25 --TAG_DUPLICATE_SET_MEMBERS false --REMOVE_SEQUENCING_DUPLICATES false --TAGGING_POLICY DontTag --CLEAR_DT true --ADD_PG_TAG_TO_READS true --REMOVE_DUPLICATES false --ASSUME_SORTED false --DUPLICATE_SCORING_STRATEGY SUM_OF_BASE_QUALITIES --PROGRAM_RECORD_ID MarkDuplicates --PROGRAM_GROUP_NAME MarkDuplicates --READ_NAME_REGEX <optimized capture of last three ':' separated fields as numeric values> --OPTICAL_DUPLICATE_PIXEL_DISTANCE 100 --MAX_OPTICAL_DUPLICATE_SET_SIZE 300000 --VERBOSITY INFO --QUIET false --VALIDATION_STRINGENCY STRICT --COMPRESSION_LEVEL 1 --MAX_RECORDS_IN_RAM 500000 --CREATE_INDEX false --CREATE_MD5_FILE false --GA4GH_CLIENT_SECRETS client_secrets.json --help false --version false --showHidden false --USE_JDK_DEFLATER false --USE_JDK_INFLATER false
+[Mon May 14 21:12:24 CST 2018] Executing as elon@longsl on Linux 4.13.0-39-generic amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_161-b12; Deflater: Intel; Inflater: Intel; Picard version: Version:4.0.2.1
+INFO	2018-05-14 21:12:24	MarkDuplicates	Start of doWork freeMemory: 195428184; totalMemory: 204996608; maxMemory: 1756364800
+INFO	2018-05-14 21:12:24	MarkDuplicates	Reading input file and constructing read end information.
+INFO	2018-05-14 21:12:24	MarkDuplicates	Will retain up to 6363640 data points before spilling to disk.
+WARNING	2018-05-14 21:12:25	AbstractOpticalDuplicateFinderCommandLineProgram	A field field parsed out of a read name was expected to contain an integer and did not. Read name: SRR3226035.53162. Cause: String 'SRR3226035.53162' did not start with a parsable number.
+INFO	2018-05-14 21:12:30	MarkDuplicates	Read 549161 records. 0 pairs never matched.
+INFO	2018-05-14 21:12:30	MarkDuplicates	After buildSortedReadEndLists freeMemory: 399333440; totalMemory: 516423680; maxMemory: 1756364800
+INFO	2018-05-14 21:12:30	MarkDuplicates	Will retain up to 54886400 duplicate indices before spilling to disk.
+INFO	2018-05-14 21:12:30	MarkDuplicates	Traversing read pair information and detecting duplicates.
+INFO	2018-05-14 21:12:31	MarkDuplicates	Traversing fragment information and detecting duplicates.
+INFO	2018-05-14 21:12:31	MarkDuplicates	Sorting list of duplicate records.
+INFO	2018-05-14 21:12:31	MarkDuplicates	After generateDuplicateIndexes freeMemory: 506416416; totalMemory: 958922752; maxMemory: 1756364800
+INFO	2018-05-14 21:12:31	MarkDuplicates	Marking 9881 records as duplicates.
+INFO	2018-05-14 21:12:31	MarkDuplicates	Found 0 optical duplicate clusters.
+INFO	2018-05-14 21:12:31	MarkDuplicates	Reads are assumed to be ordered by: coordinate
+INFO	2018-05-14 21:12:47	MarkDuplicates	Before output close freeMemory: 1199746248; totalMemory: 1220018176; maxMemory: 1756364800
+INFO	2018-05-14 21:12:47	MarkDuplicates	After output close freeMemory: 1204997112; totalMemory: 1220542464; maxMemory: 1756364800
+[Mon May 14 21:12:47 CST 2018] picard.sam.markduplicates.MarkDuplicates done. Elapsed time: 0.40 minutes.
+Runtime.totalMemory()=1220542464
+Tool returned:
+0
 
-real	0m23.786s
-user	0m44.604s
-sys	0m2.622s
+real	0m39.542s
+user	0m40.907s
+sys	0m2.448s
 
 ###COMMAND LINE###：
 time /home/elon/biosoft/samtools/1.0/bin/samtools index SRR3226035.sorted.markdup.bam
 
-real	0m3.807s
-user	0m3.710s
-sys	0m0.076s
+real	0m4.083s
+user	0m3.700s
+sys	0m0.120s
 
 ###COMMAND LINE###：
 /home/elon/biosoft/gatk/4.0/gatk HaplotypeCaller -R /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa --emit-ref-confidence GVCF -I SRR3226035.sorted.markdup.bam -O SRR3226035.g.vcf
 Using GATK jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar
 Running:
     java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=1 -jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar HaplotypeCaller -R /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa --emit-ref-confidence GVCF -I SRR3226035.sorted.markdup.bam -O SRR3226035.g.vcf
-00:32:35.339 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_compression.so
-00:34:47.174 INFO  HaplotypeCaller - ------------------------------------------------------------
-00:34:47.174 INFO  HaplotypeCaller - The Genome Analysis Toolkit (GATK) v4.0.2.1
-00:34:47.175 INFO  HaplotypeCaller - For support and documentation go to https://software.broadinstitute.org/gatk/
-00:34:47.175 INFO  HaplotypeCaller - Executing as elon@longsl on Linux v4.13.0-39-generic amd64
-00:34:47.175 INFO  HaplotypeCaller - Java runtime: Java HotSpot(TM) 64-Bit Server VM v1.8.0_161-b12
-00:34:47.175 INFO  HaplotypeCaller - Start Date/Time: 2018年5月14日 上午12时32分35秒
-00:34:47.175 INFO  HaplotypeCaller - ------------------------------------------------------------
-00:34:47.175 INFO  HaplotypeCaller - ------------------------------------------------------------
-00:34:47.176 INFO  HaplotypeCaller - HTSJDK Version: 2.14.3
-00:34:47.176 INFO  HaplotypeCaller - Picard Version: 2.17.2
-00:34:47.176 INFO  HaplotypeCaller - HTSJDK Defaults.COMPRESSION_LEVEL : 1
-00:34:47.176 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
-00:34:47.176 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
-00:34:47.176 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
-00:34:47.176 INFO  HaplotypeCaller - Deflater: IntelDeflater
-00:34:47.176 INFO  HaplotypeCaller - Inflater: IntelInflater
-00:34:47.176 INFO  HaplotypeCaller - GCS max retries/reopens: 20
-00:34:47.177 INFO  HaplotypeCaller - Using google-cloud-java patch 6d11bef1c81f885c26b2b56c8616b7a705171e4f from https://github.com/droazen/google-cloud-java/tree/dr_all_nio_fixes
-00:34:47.177 INFO  HaplotypeCaller - Initializing engine
-00:34:47.671 INFO  HaplotypeCaller - Done initializing engine
-00:34:47.675 INFO  HaplotypeCallerEngine - Standard Emitting and Calling confidence set to 0.0 for reference-model confidence output
-00:34:47.675 INFO  HaplotypeCallerEngine - All sites annotated with PLs forced to true for reference-model confidence output
-00:34:48.320 INFO  NativeLibraryLoader - Loading libgkl_utils.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_utils.so
-00:34:48.360 INFO  NativeLibraryLoader - Loading libgkl_pairhmm_omp.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_pairhmm_omp.so
-00:34:48.428 WARN  IntelPairHmm - Flush-to-zero (FTZ) is enabled when running PairHMM
-00:34:48.429 INFO  IntelPairHmm - Available threads: 4
-00:34:48.429 INFO  IntelPairHmm - Requested threads: 4
-00:34:48.429 INFO  PairHMM - Using the OpenMP multi-threaded AVX-accelerated native PairHMM implementation
-00:34:48.516 INFO  ProgressMeter - Starting traversal
-00:34:48.516 INFO  ProgressMeter -        Current Locus  Elapsed Minutes     Regions Processed   Regions/Minute
-00:34:58.609 INFO  ProgressMeter -    NC_000913.3:22440              0.2                   170           1010.6
-00:35:08.620 INFO  ProgressMeter -    NC_000913.3:57022              0.3                   430           1283.3
-00:35:19.133 INFO  ProgressMeter -   NC_000913.3:111051              0.5                   840           1646.1
-00:35:19.268 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:35:19.268 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:35:29.639 INFO  ProgressMeter -   NC_000913.3:152280              0.7                  1150           1677.9
-00:35:39.753 INFO  ProgressMeter -   NC_000913.3:217551              0.9                  1650           1932.2
-00:35:52.216 INFO  ProgressMeter -   NC_000913.3:227370              1.1                  1720           1620.1
-00:36:02.933 INFO  ProgressMeter -   NC_000913.3:256130              1.2                  1940           1564.2
-00:36:03.064 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:36:03.064 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:36:12.957 INFO  ProgressMeter -   NC_000913.3:304600              1.4                  2270           1613.0
-00:36:23.651 INFO  ProgressMeter -   NC_000913.3:326229              1.6                  2430           1532.6
-00:36:33.658 INFO  ProgressMeter -   NC_000913.3:404805              1.8                  3000           1712.0
-00:36:39.576 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:36:39.577 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:36:44.972 INFO  ProgressMeter -   NC_000913.3:479950              1.9                  3560           1834.2
-00:36:55.242 INFO  ProgressMeter -   NC_000913.3:550150              2.1                  4090           1936.5
-00:37:00.462 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:00.462 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:00.462 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:00.462 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:00.463 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:00.463 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:00.463 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:00.463 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:00.463 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:00.463 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:05.434 INFO  ProgressMeter -   NC_000913.3:627203              2.3                  4630           2029.0
-00:37:15.471 INFO  ProgressMeter -   NC_000913.3:663217              2.4                  4910           2004.7
-00:37:27.453 INFO  ProgressMeter -   NC_000913.3:732041              2.6                  5430           2049.9
-00:37:37.615 INFO  ProgressMeter -   NC_000913.3:752261              2.8                  5570           1976.4
-00:37:38.499 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:38.499 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:47.667 INFO  ProgressMeter -   NC_000913.3:811313              3.0                  6010           2012.8
-00:37:49.697 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:49.698 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:50.570 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:50.571 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:50.571 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:50.571 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:37:57.714 INFO  ProgressMeter -   NC_000913.3:896065              3.2                  6630           2102.6
-00:38:06.268 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:38:06.268 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:38:08.845 INFO  ProgressMeter -   NC_000913.3:964924              3.3                  7140           2138.5
-00:38:18.853 INFO  ProgressMeter -  NC_000913.3:1041702              3.5                  7710           2199.3
-00:38:29.444 INFO  ProgressMeter -  NC_000913.3:1094486              3.7                  8110           2202.5
-00:38:39.570 INFO  ProgressMeter -  NC_000913.3:1164460              3.9                  8610           2235.8
-00:38:49.611 INFO  ProgressMeter -  NC_000913.3:1210676              4.0                  8960           2229.8
-00:38:59.723 INFO  ProgressMeter -  NC_000913.3:1242985              4.2                  9200           2197.4
-00:39:10.390 INFO  ProgressMeter -  NC_000913.3:1304776              4.4                  9660           2213.3
-00:39:18.624 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:39:18.625 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:39:18.625 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:39:18.625 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:39:18.626 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:39:18.626 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:39:20.477 INFO  ProgressMeter -  NC_000913.3:1380826              4.5                 10180           2245.9
-00:39:26.732 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:39:26.732 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:39:31.327 INFO  ProgressMeter -  NC_000913.3:1473355              4.7                 10850           2301.9
-00:39:41.383 INFO  ProgressMeter -  NC_000913.3:1529730              4.9                 11260           2306.8
-00:39:45.531 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:39:45.532 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:39:51.540 INFO  ProgressMeter -  NC_000913.3:1598848              5.1                 11780           2332.5
-00:40:02.612 INFO  ProgressMeter -  NC_000913.3:1655462              5.2                 12190           2328.6
-00:40:12.768 INFO  ProgressMeter -  NC_000913.3:1719574              5.4                 12660           2342.6
-00:40:15.776 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:40:15.776 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
-00:40:19.218 INFO  HaplotypeCaller - 36374 read(s) filtered by: ((((((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter) AND NonZeroReferenceLengthAlignmentReadFilter) AND GoodCigarReadFilter) AND WellformedReadFilter)
-  36374 read(s) filtered by: (((((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter) AND NonZeroReferenceLengthAlignmentReadFilter) AND GoodCigarReadFilter)
-      36374 read(s) filtered by: ((((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter) AND NonZeroReferenceLengthAlignmentReadFilter)
-          36374 read(s) filtered by: (((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter)
-              36374 read(s) filtered by: ((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter)
-                  27877 read(s) filtered by: (((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter)
-                      27877 read(s) filtered by: ((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter)
-                          27877 read(s) filtered by: (MappingQualityReadFilter AND MappingQualityAvailableReadFilter)
-                              27877 read(s) filtered by: MappingQualityReadFilter 
-                  8497 read(s) filtered by: NotDuplicateReadFilter 
+21:13:01.273 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_compression.so
+21:13:02.340 INFO  HaplotypeCaller - ------------------------------------------------------------
+21:13:02.341 INFO  HaplotypeCaller - The Genome Analysis Toolkit (GATK) v4.0.2.1
+21:13:02.341 INFO  HaplotypeCaller - For support and documentation go to https://software.broadinstitute.org/gatk/
+21:13:02.341 INFO  HaplotypeCaller - Executing as elon@longsl on Linux v4.13.0-39-generic amd64
+21:13:02.342 INFO  HaplotypeCaller - Java runtime: Java HotSpot(TM) 64-Bit Server VM v1.8.0_161-b12
+21:13:02.342 INFO  HaplotypeCaller - Start Date/Time: 2018年5月14日 下午09时13分01秒
+21:13:02.342 INFO  HaplotypeCaller - ------------------------------------------------------------
+21:13:02.342 INFO  HaplotypeCaller - ------------------------------------------------------------
+21:13:02.343 INFO  HaplotypeCaller - HTSJDK Version: 2.14.3
+21:13:02.343 INFO  HaplotypeCaller - Picard Version: 2.17.2
+21:13:02.343 INFO  HaplotypeCaller - HTSJDK Defaults.COMPRESSION_LEVEL : 1
+21:13:02.343 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+21:13:02.343 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+21:13:02.343 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+21:13:02.344 INFO  HaplotypeCaller - Deflater: IntelDeflater
+21:13:02.344 INFO  HaplotypeCaller - Inflater: IntelInflater
+21:13:02.344 INFO  HaplotypeCaller - GCS max retries/reopens: 20
+21:13:02.344 INFO  HaplotypeCaller - Using google-cloud-java patch 6d11bef1c81f885c26b2b56c8616b7a705171e4f from https://github.com/droazen/google-cloud-java/tree/dr_all_nio_fixes
+21:13:02.344 INFO  HaplotypeCaller - Initializing engine
+21:13:03.011 INFO  HaplotypeCaller - Done initializing engine
+21:13:03.018 INFO  HaplotypeCallerEngine - Standard Emitting and Calling confidence set to 0.0 for reference-model confidence output
+21:13:03.018 INFO  HaplotypeCallerEngine - All sites annotated with PLs forced to true for reference-model confidence output
+21:13:03.646 INFO  NativeLibraryLoader - Loading libgkl_utils.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_utils.so
+21:13:03.689 INFO  NativeLibraryLoader - Loading libgkl_pairhmm_omp.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_pairhmm_omp.so
+21:13:03.771 WARN  IntelPairHmm - Flush-to-zero (FTZ) is enabled when running PairHMM
+21:13:03.772 INFO  IntelPairHmm - Available threads: 4
+21:13:03.772 INFO  IntelPairHmm - Requested threads: 4
+21:13:03.772 INFO  PairHMM - Using the OpenMP multi-threaded AVX-accelerated native PairHMM implementation
+21:13:03.905 INFO  ProgressMeter - Starting traversal
+21:13:03.905 INFO  ProgressMeter -        Current Locus  Elapsed Minutes     Regions Processed   Regions/Minute
+21:13:14.230 INFO  ProgressMeter -    NC_000913.3:21161              0.2                   160            929.8
+21:13:24.352 INFO  ProgressMeter -    NC_000913.3:59434              0.3                   450           1320.5
+21:13:33.743 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:13:33.743 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:13:35.042 INFO  ProgressMeter -   NC_000913.3:115554              0.5                   870           1676.5
+21:13:45.432 INFO  ProgressMeter -   NC_000913.3:156355              0.7                  1180           1704.9
+21:14:00.765 INFO  ProgressMeter -   NC_000913.3:225406              0.9                  1710           1804.4
+21:14:11.060 INFO  ProgressMeter -   NC_000913.3:229143              1.1                  1730           1545.7
+21:14:17.069 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:14:17.069 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:14:21.646 INFO  ProgressMeter -   NC_000913.3:268467              1.3                  2020           1559.0
+21:14:34.322 INFO  ProgressMeter -   NC_000913.3:318739              1.5                  2370           1572.7
+21:14:44.716 INFO  ProgressMeter -   NC_000913.3:385822              1.7                  2860           1702.2
+21:14:53.744 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:14:53.745 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:14:55.214 INFO  ProgressMeter -   NC_000913.3:457945              1.9                  3390           1827.3
+21:15:05.271 INFO  ProgressMeter -   NC_000913.3:520518              2.0                  3870           1913.2
+21:15:14.876 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:15:14.877 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:15:14.877 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:15:14.877 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:15:14.877 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:15:14.878 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:15:14.878 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:15:14.878 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:15:14.878 WARN  DepthPerSampleHC - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:15:14.878 WARN  StrandBiasBySample - Annotation will not be calculated, genotype is not called or alleleLikelihoodMap is null
+21:15:15.280 INFO  ProgressMeter -   NC_000913.3:578227              2.2                  4290           1959.3
+21:15:25.285 INFO  ProgressMeter -   NC_000913.3:647284              2.4                  4780           2028.6
+21:15:35.369 INFO  ProgressMeter -   NC_000913.3:686465              2.5                  5080           2012.4
 
-00:40:19.218 INFO  ProgressMeter -  NC_000913.3:1769173              5.5                 13021           2362.4
-00:40:19.218 INFO  ProgressMeter - Traversal complete. Processed 13021 total regions in 5.5 minutes.
-00:40:19.252 INFO  VectorLoglessPairHMM - Time spent in setup for JNI call : 0.271898866
-00:40:19.252 INFO  PairHMM - Total compute time in PairHMM computeLogLikelihoods() : 89.976333627
-00:40:19.252 INFO  SmithWatermanAligner - Total compute time in java Smith-Waterman : 106.04 sec
-00:40:19.253 INFO  HaplotypeCaller - Shutting down engine
-[2018年5月14日 上午12时40分19秒] org.broadinstitute.hellbender.tools.walkers.haplotypecaller.HaplotypeCaller done. Elapsed time: 7.73 minutes.
-Runtime.totalMemory()=758644736
-
-real	7m46.884s
-user	11m21.406s
-sys	0m1.709s
-
+real	2m44.426s
+user	0m0.019s
+sys	0m0.017s
 ###COMMAND LINE###：
 /home/elon/hadoop/bin/hadoop fs -put -f SRR3226035.g.vcf /wgsv2/output/gvcf
-18/05/14 00:40:20 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/05/14 21:16:02 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 
+real	0m41.317s
+user	0m5.186s
+sys	0m0.285s

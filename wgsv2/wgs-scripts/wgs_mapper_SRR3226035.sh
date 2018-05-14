@@ -37,7 +37,7 @@ time $HADOOP/hadoop fs -get /wgsv2/input/fastq/$INPUT_FILE_R1 && echo "" >&2
 echo "###COMMAND LINE###：" >&2
 echo "$HADOOP/hadoop fs -get /wgsv2/input/fastq/$INPUT_FILE_R2" >&2
 time $HADOOP/hadoop fs -get /wgsv2/input/fastq/$INPUT_FILE_R2
-echo "*** download sample file from HDFS" && echo "" >&2
+echo "*** 从HDFS上下载样本数据块" && echo "" >&2
 
 # ××××××  基因测序 ×××××××
 # 步骤一 比对
@@ -45,7 +45,7 @@ echo "###COMMAND LINE###：" >&2
 echo "$BWA/bwa mem -t $THREAD -R $INFO_RG $REF $INPUT_FILE_R1 $INPUT_FILE_R2 | \
 $SAMTOOLS/samtools view -Sb - > SRR3226035.bam" >&2
 time $BWA/bwa mem -t $THREAD -R $INFO_RG $REF $INPUT_FILE_R1 $INPUT_FILE_R2 | \
-$SAMTOOLS/samtools view -Sb - > SRR3226035.bam && echo "*** bwa mapping done" && echo "" >&2
+$SAMTOOLS/samtools view -Sb - > SRR3226035.bam && echo "*** 基因比对操作完成" && echo "" >&2
 
 rm -f $INPUT_FILE_R1 $INPUT_FILE_R2
 
@@ -54,7 +54,7 @@ echo "###COMMAND LINE###：" >&2
 echo "$SAMTOOLS/samtools sort -@ $THREAD -m $MEMORY -O bam -o SRR3226035.sorted.bam \
 SRR3226035.bam -T PREFIX.bam" >&2
 time $SAMTOOLS/samtools sort -@ $THREAD -m $MEMORY -O bam -o SRR3226035.sorted.bam \
-SRR3226035.bam -T PREFIX.bam && echo "*** sort bam done" && echo "" >&2
+SRR3226035.bam -T PREFIX.bam && echo "*** 基因数据排序完成" && echo "" >&2
 
 rm -f SRR3226035.bam
 
@@ -63,7 +63,7 @@ echo "###COMMAND LINE###：" >&2
 echo "$GATK MarkDuplicates -I SRR3226035.sorted.bam -O SRR3226035.sorted.markdup.bam \
 -M SRR3226035.sorted.markup_metrics.txt" >&2
 time $GATK MarkDuplicates -I SRR3226035.sorted.bam -O SRR3226035.sorted.markdup.bam \
--M SRR3226035.sorted.markup_metrics.txt && echo "*** 对BAM文件进行重复标记" && echo "" >&2
+-M SRR3226035.sorted.markdup_metrics.txt 1>&2 && echo "*** 对BAM文件进行重复标记" && echo "" >&2
 
 rm -f SRR3226035.sorted.bam
 
@@ -79,11 +79,12 @@ echo "$GATK HaplotypeCaller -R $REF --emit-ref-confidence GVCF -I SRR3226035.sor
 time $GATK HaplotypeCaller -R $REF --emit-ref-confidence GVCF -I SRR3226035.sorted.markdup.bam \
 -O SRR3226035.g.vcf && echo "*** 生成样本SRR3226035的中间变异检测文件gvcf" && echo "" >&2
 
-rm -f SRR3226035.sorted.markdup.bam* SRR3226035.sorted.markdup_metrics.txt
+rm -f SRR3226035.sorted.markdup.bam SRR3226035.sorted.markdup_metrics.txt
 
 # 将各个样本分区的变异检测gvcf文件上传到HDFS上
 echo "###COMMAND LINE###：" >&2
 echo "$HADOOP/hadoop fs -put -f SRR3226035.g.vcf /wgsv2/output/gvcf" >&2
-$HADOOP/hadoop fs -put -f SRR3226035.g.vcf /wgsv2/output/gvcf && echo "*** 变异检测结果gvcf文件上传到HDFS上" && echo "">&2
+time $HADOOP/hadoop fs -put -f SRR3226035.g.vcf /wgsv2/output/gvcf && echo "*** 变异检测结果gvcf文件上传到HDFS上" && echo "">&2
+
 echo "############" `date "+%Y-%m-%d %H:%M:%S"` "############"
-echo "--- 结束处理样本 SRR3226035 ---"
+echo "--- 结束处理样本 SRR3226035 ---" && echo "" >&2 && echo "" >&2

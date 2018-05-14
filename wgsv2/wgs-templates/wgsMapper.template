@@ -37,7 +37,7 @@ time $HADOOP/hadoop fs -get /wgsv2/input/fastq/$INPUT_FILE_R1 && echo "" >&2
 echo "###COMMAND LINE###：" >&2
 echo "$HADOOP/hadoop fs -get /wgsv2/input/fastq/$INPUT_FILE_R2" >&2
 time $HADOOP/hadoop fs -get /wgsv2/input/fastq/$INPUT_FILE_R2
-echo "*** download sample file from HDFS" && echo "" >&2
+echo "*** 从HDFS上下载样本数据块" && echo "" >&2
 
 # ××××××  基因测序 ×××××××
 # 步骤一 比对
@@ -45,7 +45,7 @@ echo "###COMMAND LINE###：" >&2
 echo "$BWA/bwa mem -t $THREAD -R $INFO_RG $REF $INPUT_FILE_R1 $INPUT_FILE_R2 | \
 $SAMTOOLS/samtools view -Sb - > ${sample_name}.bam" >&2
 time $BWA/bwa mem -t $THREAD -R $INFO_RG $REF $INPUT_FILE_R1 $INPUT_FILE_R2 | \
-$SAMTOOLS/samtools view -Sb - > ${sample_name}.bam && echo "*** bwa mapping done" && echo "" >&2
+$SAMTOOLS/samtools view -Sb - > ${sample_name}.bam && echo "*** 基因比对操作完成" && echo "" >&2
 
 rm -f $INPUT_FILE_R1 $INPUT_FILE_R2
 
@@ -54,7 +54,7 @@ echo "###COMMAND LINE###：" >&2
 echo "$SAMTOOLS/samtools sort -@ $THREAD -m $MEMORY -O bam -o ${sample_name}.sorted.bam \
 ${sample_name}.bam -T PREFIX.bam" >&2
 time $SAMTOOLS/samtools sort -@ $THREAD -m $MEMORY -O bam -o ${sample_name}.sorted.bam \
-${sample_name}.bam -T PREFIX.bam && echo "*** sort bam done" && echo "" >&2
+${sample_name}.bam -T PREFIX.bam && echo "*** 基因数据排序完成" && echo "" >&2
 
 rm -f ${sample_name}.bam
 
@@ -79,7 +79,7 @@ echo "$GATK HaplotypeCaller -R $REF --emit-ref-confidence GVCF -I ${sample_name}
 time $GATK HaplotypeCaller -R $REF --emit-ref-confidence GVCF -I ${sample_name}.sorted.markdup.bam \
 -O ${sample_name}.g.vcf && echo "*** 生成样本${sample_name}的中间变异检测文件gvcf" && echo "" >&2
 
-rm -f ${sample_name}.sorted.markdup.bam ${sample_name}.sorted.markdup_metrics.txt
+rm -f ${sample_name}.sorted.markdup.bam* ${sample_name}.sorted.markdup_metrics.txt
 
 # 将各个样本分区的变异检测gvcf文件上传到HDFS上
 echo "###COMMAND LINE###：" >&2

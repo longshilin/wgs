@@ -66,8 +66,8 @@ time $SAMTOOLS/tabix -p vcf E_coli_K12.vcf.gz \
 
 ## 3. 上传最终的VCF文件以及索引文件到HDFS上
 echo "###COMMAND LINE###：" >&2
-echo "$HADOOP/hadoop fs -put E_coli_K12.vcf.gz* /wgsv2/output/vcf" >&2
-time $HADOOP/hadoop fs -put E_coli_K12.vcf.gz* /wgsv2/output/vcf \
+echo "$HADOOP/hadoop fs -f -put E_coli_K12.vcf.gz* /wgsv2/output/vcf" >&2
+time $HADOOP/hadoop fs -f -put E_coli_K12.vcf.gz* /wgsv2/output/vcf \
 && echo "*** 变异检测结果vcf文件上传到HDFS上" && echo "">&2
 
 rm -f E_coli_K12.vcf* *g.vcf*
