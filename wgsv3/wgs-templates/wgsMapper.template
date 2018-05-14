@@ -87,5 +87,5 @@ echo "###COMMAND LINE###：" >&2
 echo "$HADOOP/hadoop fs -put -f ${sample_name}.g.vcf /wgsv2/output/gvcf" >&2
 time $HADOOP/hadoop fs -put -f ${sample_name}.g.vcf /wgsv2/output/gvcf && echo "*** 变异检测结果gvcf文件上传到HDFS上" && echo "">&2
 
-echo "############" `date "+%Y-%m-%d %H:%M:%S"` "############"
-echo "--- 结束处理样本 ${sample_name} ---" && echo "" >&2 && echo "" >&2
+echo "--- 结束处理样本 ${sample_name} ---"
+echo "############" `date "+%Y-%m-%d %H:%M:%S"` "############" && echo ""

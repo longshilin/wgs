@@ -75,5 +75,5 @@ time $HADOOP/hadoop fs -f -put E_coli_K12.vcf.gz* /wgsv2/output/vcf \
 
 rm -f E_coli_K12.vcf* *g.vcf*
 
-echo "############" `date "+%Y-%m-%d %H:%M:%S"` "############"
-echo "--- 结束处理样本 ${sample_name} ---" && echo "" >&2
+echo "--- 结束处理样本 ${sample_name} ---"
+echo "############" `date "+%Y-%m-%d %H:%M:%S"` "############" && echo ""
