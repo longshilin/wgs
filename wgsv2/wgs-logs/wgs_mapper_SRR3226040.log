@@ -1,5 +1,21 @@
-18/04/11 22:22:22 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-18/04/11 22:22:27 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+###COMMAND LINE###：
+/home/elon/hadoop/bin/hadoop fs -get /wgsv2/input/fastq/SRR3226040_1.fastq.gz
+18/05/14 01:03:04 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+real	0m2.823s
+user	0m4.734s
+sys	0m0.310s
+
+###COMMAND LINE###：
+/home/elon/hadoop/bin/hadoop fs -get /wgsv2/input/fastq/SRR3226040_2.fastq.gz
+18/05/14 01:03:07 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+real	0m2.751s
+user	0m4.453s
+sys	0m0.269s
+
+###COMMAND LINE###：
+/home/elon/biosoft/bwa/0.7.12/bwa mem -t 4 -R @RG\tID:SRR3226040\tPL:illumina\tSM:E.coli_K12_SRR3226040 /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa SRR3226040_1.fastq.gz SRR3226040_2.fastq.gz | /home/elon/biosoft/samtools/1.0/bin/samtools view -Sb - > SRR3226040.bam
 [M::bwa_idx_load_from_disk] read 0 ALT contigs
 [M::process] read 531494 sequences (40000000 bp)...
 [M::process] read 531044 sequences (40000057 bp)...
@@ -25,7 +41,7 @@
 [M::mem_pestat] mean and std.dev: (479.82, 341.61)
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 2097)
 [M::mem_pestat] skip orientation RF
-[M::mem_process_seqs] Processed 531494 reads in 219.862 CPU sec, 56.187 real sec
+[M::mem_process_seqs] Processed 531494 reads in 90.727 CPU sec, 23.063 real sec
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (8052, 68305, 2313, 8058)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
 [M::mem_pestat] (25, 50, 75) percentile: (222, 413, 700)
@@ -49,7 +65,7 @@
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 2153)
 [M::mem_pestat] skip orientation RF
 [M::process] read 530854 sequences (40000069 bp)...
-[M::mem_process_seqs] Processed 531044 reads in 99.197 CPU sec, 27.334 real sec
+[M::mem_process_seqs] Processed 531044 reads in 92.970 CPU sec, 25.182 real sec
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (8444, 67616, 2428, 8194)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
 [M::mem_pestat] (25, 50, 75) percentile: (226, 416, 693)
@@ -73,7 +89,7 @@
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 2159)
 [M::mem_pestat] skip orientation RF
 [M::process] read 531602 sequences (40000038 bp)...
-[M::mem_process_seqs] Processed 530854 reads in 92.757 CPU sec, 25.181 real sec
+[M::mem_process_seqs] Processed 530854 reads in 92.811 CPU sec, 25.162 real sec
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (8380, 67720, 2442, 8175)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
 [M::mem_pestat] (25, 50, 75) percentile: (230, 427, 713)
@@ -97,7 +113,7 @@
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 2171)
 [M::mem_pestat] skip orientation RF
 [M::process] read 498018 sequences (37504090 bp)...
-[M::mem_process_seqs] Processed 531602 reads in 102.688 CPU sec, 27.722 real sec
+[M::mem_process_seqs] Processed 531602 reads in 93.757 CPU sec, 25.388 real sec
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (8084, 62500, 2337, 8013)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
 [M::mem_pestat] (25, 50, 75) percentile: (236, 429, 715)
@@ -120,121 +136,130 @@
 [M::mem_pestat] mean and std.dev: (497.45, 347.67)
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 2162)
 [M::mem_pestat] skip orientation RF
-[M::mem_process_seqs] Processed 498018 reads in 94.791 CPU sec, 26.013 real sec
+[M::mem_process_seqs] Processed 498018 reads in 86.683 CPU sec, 23.522 real sec
 [main] Version: 0.7.12-r1039
 [main] CMD: /home/elon/biosoft/bwa/0.7.12/bwa mem -t 4 -R @RG\tID:SRR3226040\tPL:illumina\tSM:E.coli_K12_SRR3226040 /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa SRR3226040_1.fastq.gz SRR3226040_2.fastq.gz
-[main] Real time: 168.991 sec; CPU: 611.587 sec
+[main] Real time: 127.382 sec; CPU: 458.018 sec
 
-real	2m49.553s
-user	10m42.203s
-sys	0m2.913s
+real	2m7.990s
+user	8m6.451s
+sys	0m2.554s
 
-real	0m12.398s
-user	0m29.664s
-sys	0m0.456s
+###COMMAND LINE###：
+/home/elon/biosoft/samtools/1.0/bin/samtools sort -@ 4 -m 4G -O bam -o SRR3226040.sorted.bam SRR3226040.bam -T PREFIX.bam
+
+real	0m12.428s
+user	0m29.644s
+sys	0m0.439s
+
+###COMMAND LINE###：
+/home/elon/biosoft/gatk/4.0/gatk MarkDuplicates -I SRR3226040.sorted.bam -O SRR3226040.sorted.markdup.bam -M SRR3226040.sorted.markup_metrics.txt
 Using GATK jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar
 Running:
     java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=1 -jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar MarkDuplicates -I SRR3226040.sorted.bam -O SRR3226040.sorted.markdup.bam -M SRR3226040.sorted.markup_metrics.txt
-22:25:35.273 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_compression.so
-[Wed Apr 11 22:25:35 CST 2018] MarkDuplicates  --INPUT SRR3226040.sorted.bam --OUTPUT SRR3226040.sorted.markdup.bam --METRICS_FILE SRR3226040.sorted.markup_metrics.txt  --MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP 50000 --MAX_FILE_HANDLES_FOR_READ_ENDS_MAP 8000 --SORTING_COLLECTION_SIZE_RATIO 0.25 --TAG_DUPLICATE_SET_MEMBERS false --REMOVE_SEQUENCING_DUPLICATES false --TAGGING_POLICY DontTag --CLEAR_DT true --ADD_PG_TAG_TO_READS true --REMOVE_DUPLICATES false --ASSUME_SORTED false --DUPLICATE_SCORING_STRATEGY SUM_OF_BASE_QUALITIES --PROGRAM_RECORD_ID MarkDuplicates --PROGRAM_GROUP_NAME MarkDuplicates --READ_NAME_REGEX <optimized capture of last three ':' separated fields as numeric values> --OPTICAL_DUPLICATE_PIXEL_DISTANCE 100 --MAX_OPTICAL_DUPLICATE_SET_SIZE 300000 --VERBOSITY INFO --QUIET false --VALIDATION_STRINGENCY STRICT --COMPRESSION_LEVEL 1 --MAX_RECORDS_IN_RAM 500000 --CREATE_INDEX false --CREATE_MD5_FILE false --GA4GH_CLIENT_SECRETS client_secrets.json --help false --version false --showHidden false --USE_JDK_DEFLATER false --USE_JDK_INFLATER false
-[Wed Apr 11 22:25:35 CST 2018] Executing as elon@longsl on Linux 4.13.0-38-generic amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_161-b12; Deflater: Intel; Inflater: Intel; Picard version: Version:4.0.2.1
-INFO	2018-04-11 22:25:35	MarkDuplicates	Start of doWork freeMemory: 193191920; totalMemory: 202375168; maxMemory: 1756364800
-INFO	2018-04-11 22:25:35	MarkDuplicates	Reading input file and constructing read end information.
-INFO	2018-04-11 22:25:35	MarkDuplicates	Will retain up to 6363640 data points before spilling to disk.
-WARNING	2018-04-11 22:25:35	AbstractOpticalDuplicateFinderCommandLineProgram	A field field parsed out of a read name was expected to contain an integer and did not. Read name: SRR3226040.15780. Cause: String 'SRR3226040.15780' did not start with a parsable number.
-INFO	2018-04-11 22:25:42	MarkDuplicates	Read 988349 records. 0 pairs never matched.
-INFO	2018-04-11 22:25:42	MarkDuplicates	After buildSortedReadEndLists freeMemory: 566697192; totalMemory: 734527488; maxMemory: 1756364800
-INFO	2018-04-11 22:25:42	MarkDuplicates	Will retain up to 54886400 duplicate indices before spilling to disk.
-INFO	2018-04-11 22:25:42	MarkDuplicates	Traversing read pair information and detecting duplicates.
-INFO	2018-04-11 22:25:43	MarkDuplicates	Traversing fragment information and detecting duplicates.
-INFO	2018-04-11 22:25:43	MarkDuplicates	Sorting list of duplicate records.
-INFO	2018-04-11 22:25:43	MarkDuplicates	After generateDuplicateIndexes freeMemory: 826456768; totalMemory: 1282932736; maxMemory: 1756364800
-INFO	2018-04-11 22:25:43	MarkDuplicates	Marking 25871 records as duplicates.
-INFO	2018-04-11 22:25:43	MarkDuplicates	Found 0 optical duplicate clusters.
-INFO	2018-04-11 22:25:43	MarkDuplicates	Reads are assumed to be ordered by: coordinate
-INFO	2018-04-11 22:25:53	MarkDuplicates	Before output close freeMemory: 1295254464; totalMemory: 1315962880; maxMemory: 1756364800
-INFO	2018-04-11 22:25:53	MarkDuplicates	After output close freeMemory: 1313715416; totalMemory: 1329594368; maxMemory: 1756364800
-[Wed Apr 11 22:25:53 CST 2018] picard.sam.markduplicates.MarkDuplicates done. Elapsed time: 0.31 minutes.
-Runtime.totalMemory()=1329594368
+01:05:31.966 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_compression.so
+[Mon May 14 01:05:31 CST 2018] MarkDuplicates  --INPUT SRR3226040.sorted.bam --OUTPUT SRR3226040.sorted.markdup.bam --METRICS_FILE SRR3226040.sorted.markup_metrics.txt  --MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP 50000 --MAX_FILE_HANDLES_FOR_READ_ENDS_MAP 8000 --SORTING_COLLECTION_SIZE_RATIO 0.25 --TAG_DUPLICATE_SET_MEMBERS false --REMOVE_SEQUENCING_DUPLICATES false --TAGGING_POLICY DontTag --CLEAR_DT true --ADD_PG_TAG_TO_READS true --REMOVE_DUPLICATES false --ASSUME_SORTED false --DUPLICATE_SCORING_STRATEGY SUM_OF_BASE_QUALITIES --PROGRAM_RECORD_ID MarkDuplicates --PROGRAM_GROUP_NAME MarkDuplicates --READ_NAME_REGEX <optimized capture of last three ':' separated fields as numeric values> --OPTICAL_DUPLICATE_PIXEL_DISTANCE 100 --MAX_OPTICAL_DUPLICATE_SET_SIZE 300000 --VERBOSITY INFO --QUIET false --VALIDATION_STRINGENCY STRICT --COMPRESSION_LEVEL 1 --MAX_RECORDS_IN_RAM 500000 --CREATE_INDEX false --CREATE_MD5_FILE false --GA4GH_CLIENT_SECRETS client_secrets.json --help false --version false --showHidden false --USE_JDK_DEFLATER false --USE_JDK_INFLATER false
+[Mon May 14 01:05:31 CST 2018] Executing as elon@longsl on Linux 4.13.0-39-generic amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_161-b12; Deflater: Intel; Inflater: Intel; Picard version: Version:4.0.2.1
+INFO	2018-05-14 01:05:32	MarkDuplicates	Start of doWork freeMemory: 184368568; totalMemory: 193462272; maxMemory: 1756364800
+INFO	2018-05-14 01:05:32	MarkDuplicates	Reading input file and constructing read end information.
+INFO	2018-05-14 01:05:32	MarkDuplicates	Will retain up to 6363640 data points before spilling to disk.
+WARNING	2018-05-14 01:05:32	AbstractOpticalDuplicateFinderCommandLineProgram	A field field parsed out of a read name was expected to contain an integer and did not. Read name: SRR3226040.15780. Cause: String 'SRR3226040.15780' did not start with a parsable number.
+INFO	2018-05-14 01:05:39	MarkDuplicates	Read 988349 records. 0 pairs never matched.
+INFO	2018-05-14 01:05:39	MarkDuplicates	After buildSortedReadEndLists freeMemory: 609413264; totalMemory: 778043392; maxMemory: 1756364800
+INFO	2018-05-14 01:05:39	MarkDuplicates	Will retain up to 54886400 duplicate indices before spilling to disk.
+INFO	2018-05-14 01:05:39	MarkDuplicates	Traversing read pair information and detecting duplicates.
+INFO	2018-05-14 01:05:39	MarkDuplicates	Traversing fragment information and detecting duplicates.
+INFO	2018-05-14 01:05:39	MarkDuplicates	Sorting list of duplicate records.
+INFO	2018-05-14 01:05:40	MarkDuplicates	After generateDuplicateIndexes freeMemory: 763367608; totalMemory: 1218445312; maxMemory: 1756364800
+INFO	2018-05-14 01:05:40	MarkDuplicates	Marking 25871 records as duplicates.
+INFO	2018-05-14 01:05:40	MarkDuplicates	Found 0 optical duplicate clusters.
+INFO	2018-05-14 01:05:40	MarkDuplicates	Reads are assumed to be ordered by: coordinate
+INFO	2018-05-14 01:05:49	MarkDuplicates	Before output close freeMemory: 375067440; totalMemory: 1340080128; maxMemory: 1756364800
+INFO	2018-05-14 01:05:49	MarkDuplicates	After output close freeMemory: 1325450728; totalMemory: 1341128704; maxMemory: 1756364800
+[Mon May 14 01:05:49 CST 2018] picard.sam.markduplicates.MarkDuplicates done. Elapsed time: 0.30 minutes.
+Runtime.totalMemory()=1341128704
+Tool returned:
+0
 
-real	0m21.198s
-user	0m42.666s
-sys	0m2.080s
+real	0m20.661s
+user	0m39.867s
+sys	0m1.888s
 
-real	0m2.406s
-user	0m2.383s
+###COMMAND LINE###：
+time /home/elon/biosoft/samtools/1.0/bin/samtools index SRR3226040.sorted.markdup.bam
+
+real	0m2.420s
+user	0m2.395s
 sys	0m0.024s
+
+###COMMAND LINE###：
+/home/elon/biosoft/gatk/4.0/gatk HaplotypeCaller -R /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa --emit-ref-confidence GVCF -I SRR3226040.sorted.markdup.bam -O SRR3226040.g.vcf
 Using GATK jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar
 Running:
     java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=1 -jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar HaplotypeCaller -R /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa --emit-ref-confidence GVCF -I SRR3226040.sorted.markdup.bam -O SRR3226040.g.vcf
-22:25:59.222 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_compression.so
-22:25:59.354 INFO  HaplotypeCaller - ------------------------------------------------------------
-22:25:59.354 INFO  HaplotypeCaller - The Genome Analysis Toolkit (GATK) v4.0.2.1
-22:25:59.354 INFO  HaplotypeCaller - For support and documentation go to https://software.broadinstitute.org/gatk/
-22:25:59.354 INFO  HaplotypeCaller - Executing as elon@longsl on Linux v4.13.0-38-generic amd64
-22:25:59.354 INFO  HaplotypeCaller - Java runtime: Java HotSpot(TM) 64-Bit Server VM v1.8.0_161-b12
-22:25:59.355 INFO  HaplotypeCaller - Start Date/Time: 2018年4月11日 下午10时25分59秒
-22:25:59.355 INFO  HaplotypeCaller - ------------------------------------------------------------
-22:25:59.355 INFO  HaplotypeCaller - ------------------------------------------------------------
-22:25:59.355 INFO  HaplotypeCaller - HTSJDK Version: 2.14.3
-22:25:59.356 INFO  HaplotypeCaller - Picard Version: 2.17.2
-22:25:59.356 INFO  HaplotypeCaller - HTSJDK Defaults.COMPRESSION_LEVEL : 1
-22:25:59.356 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
-22:25:59.356 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
-22:25:59.356 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
-22:25:59.356 INFO  HaplotypeCaller - Deflater: IntelDeflater
-22:25:59.356 INFO  HaplotypeCaller - Inflater: IntelInflater
-22:25:59.356 INFO  HaplotypeCaller - GCS max retries/reopens: 20
-22:25:59.356 INFO  HaplotypeCaller - Using google-cloud-java patch 6d11bef1c81f885c26b2b56c8616b7a705171e4f from https://github.com/droazen/google-cloud-java/tree/dr_all_nio_fixes
-22:25:59.356 INFO  HaplotypeCaller - Initializing engine
-22:25:59.785 INFO  HaplotypeCaller - Done initializing engine
-22:25:59.789 INFO  HaplotypeCallerEngine - Standard Emitting and Calling confidence set to 0.0 for reference-model confidence output
-22:25:59.789 INFO  HaplotypeCallerEngine - All sites annotated with PLs forced to true for reference-model confidence output
-22:26:00.433 INFO  NativeLibraryLoader - Loading libgkl_utils.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_utils.so
-22:26:00.434 INFO  NativeLibraryLoader - Loading libgkl_pairhmm_omp.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_pairhmm_omp.so
-22:26:00.499 WARN  IntelPairHmm - Flush-to-zero (FTZ) is enabled when running PairHMM
-22:26:00.500 INFO  IntelPairHmm - Available threads: 4
-22:26:00.500 INFO  IntelPairHmm - Requested threads: 4
-22:26:00.500 INFO  PairHMM - Using the OpenMP multi-threaded AVX-accelerated native PairHMM implementation
-22:26:00.551 INFO  ProgressMeter - Starting traversal
-22:26:00.552 INFO  ProgressMeter -        Current Locus  Elapsed Minutes     Regions Processed   Regions/Minute
-22:26:10.593 INFO  ProgressMeter -    NC_000913.3:22627              0.2                   140            836.7
-22:26:20.613 INFO  ProgressMeter -    NC_000913.3:90149              0.3                   530           1585.2
-22:26:32.761 INFO  ProgressMeter -   NC_000913.3:143771              0.5                   820           1527.6
-22:26:45.055 INFO  ProgressMeter -   NC_000913.3:151653              0.7                   870           1173.0
-22:27:00.048 INFO  ProgressMeter -   NC_000913.3:223799              1.0                  1250           1260.6
-22:27:15.774 INFO  ProgressMeter -   NC_000913.3:225537              1.3                  1260           1005.0
-22:27:32.336 INFO  ProgressMeter -   NC_000913.3:227027              1.5                  1270            830.2
-22:27:45.077 INFO  ProgressMeter -   NC_000913.3:238743              1.7                  1350            774.9
-22:27:55.762 INFO  ProgressMeter -   NC_000913.3:266530              1.9                  1520            791.6
-22:28:06.888 INFO  ProgressMeter -   NC_000913.3:272751              2.1                  1560            740.9
-22:28:17.208 INFO  ProgressMeter -   NC_000913.3:315070              2.3                  1820            799.1
-22:28:27.558 INFO  ProgressMeter -   NC_000913.3:334760              2.5                  1950            795.9
-22:28:37.624 INFO  ProgressMeter -   NC_000913.3:440812              2.6                  2590            989.4
-22:28:47.761 INFO  ProgressMeter -   NC_000913.3:542862              2.8                  3200           1148.3
-22:28:59.113 INFO  ProgressMeter -   NC_000913.3:584965              3.0                  3480           1169.3
-22:29:09.502 INFO  ProgressMeter -   NC_000913.3:661831              3.1                  3930           1247.9
-22:29:19.781 INFO  ProgressMeter -   NC_000913.3:732953              3.3                  4350           1310.1
-22:29:30.163 INFO  ProgressMeter -   NC_000913.3:742697              3.5                  4410           1262.3
-22:29:40.461 INFO  ProgressMeter -   NC_000913.3:848320              3.7                  5020           1369.7
-22:29:51.469 INFO  ProgressMeter -   NC_000913.3:926596              3.8                  5500           1429.1
-22:30:01.727 INFO  ProgressMeter -  NC_000913.3:1005496              4.0                  5970           1485.2
-22:30:13.191 INFO  ProgressMeter -  NC_000913.3:1087892              4.2                  6450           1531.8
-22:30:23.729 INFO  ProgressMeter -  NC_000913.3:1096853              4.4                  6510           1484.2
-22:30:34.640 INFO  ProgressMeter -  NC_000913.3:1181905              4.6                  7010           1534.5
-22:30:50.343 INFO  ProgressMeter -  NC_000913.3:1209724              4.8                  7190           1488.7
-22:31:00.794 INFO  ProgressMeter -  NC_000913.3:1211898              5.0                  7210           1440.8
-22:31:11.968 INFO  ProgressMeter -  NC_000913.3:1218047              5.2                  7250           1396.8
-22:31:28.541 INFO  ProgressMeter -  NC_000913.3:1224876              5.5                  7290           1333.6
-22:31:38.955 INFO  ProgressMeter -  NC_000913.3:1236824              5.6                  7370           1306.7
-22:31:49.074 INFO  ProgressMeter -  NC_000913.3:1325728              5.8                  7920           1363.5
-22:32:01.662 INFO  ProgressMeter -  NC_000913.3:1425272              6.0                  8530           1417.3
-22:32:11.666 INFO  ProgressMeter -  NC_000913.3:1493794              6.2                  8960           1448.6
-22:32:22.619 INFO  ProgressMeter -  NC_000913.3:1532082              6.4                  9210           1446.3
-22:32:33.470 INFO  ProgressMeter -  NC_000913.3:1590440              6.5                  9570           1461.4
-22:32:43.476 INFO  ProgressMeter -  NC_000913.3:1641495              6.7                  9890           1472.7
-22:32:53.991 INFO  ProgressMeter -  NC_000913.3:1688545              6.9                 10180           1477.4
-22:33:01.382 INFO  HaplotypeCaller - 81563 read(s) filtered by: ((((((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter) AND NonZeroReferenceLengthAlignmentReadFilter) AND GoodCigarReadFilter) AND WellformedReadFilter)
+01:05:55.162 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_compression.so
+01:08:25.864 INFO  HaplotypeCaller - ------------------------------------------------------------
+01:08:25.865 INFO  HaplotypeCaller - The Genome Analysis Toolkit (GATK) v4.0.2.1
+01:08:25.865 INFO  HaplotypeCaller - For support and documentation go to https://software.broadinstitute.org/gatk/
+01:08:25.866 INFO  HaplotypeCaller - Executing as elon@longsl on Linux v4.13.0-39-generic amd64
+01:08:25.866 INFO  HaplotypeCaller - Java runtime: Java HotSpot(TM) 64-Bit Server VM v1.8.0_161-b12
+01:08:25.867 INFO  HaplotypeCaller - Start Date/Time: 2018年5月14日 上午01时05分55秒
+01:08:25.867 INFO  HaplotypeCaller - ------------------------------------------------------------
+01:08:25.867 INFO  HaplotypeCaller - ------------------------------------------------------------
+01:08:25.869 INFO  HaplotypeCaller - HTSJDK Version: 2.14.3
+01:08:25.869 INFO  HaplotypeCaller - Picard Version: 2.17.2
+01:08:25.869 INFO  HaplotypeCaller - HTSJDK Defaults.COMPRESSION_LEVEL : 1
+01:08:25.869 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+01:08:25.869 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+01:08:25.869 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+01:08:25.870 INFO  HaplotypeCaller - Deflater: IntelDeflater
+01:08:25.870 INFO  HaplotypeCaller - Inflater: IntelInflater
+01:08:25.870 INFO  HaplotypeCaller - GCS max retries/reopens: 20
+01:08:25.870 INFO  HaplotypeCaller - Using google-cloud-java patch 6d11bef1c81f885c26b2b56c8616b7a705171e4f from https://github.com/droazen/google-cloud-java/tree/dr_all_nio_fixes
+01:08:25.870 INFO  HaplotypeCaller - Initializing engine
+01:08:26.265 INFO  HaplotypeCaller - Done initializing engine
+01:08:26.271 INFO  HaplotypeCallerEngine - Standard Emitting and Calling confidence set to 0.0 for reference-model confidence output
+01:08:26.271 INFO  HaplotypeCallerEngine - All sites annotated with PLs forced to true for reference-model confidence output
+01:08:26.846 INFO  NativeLibraryLoader - Loading libgkl_utils.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_utils.so
+01:08:26.848 INFO  NativeLibraryLoader - Loading libgkl_pairhmm_omp.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_pairhmm_omp.so
+01:08:26.897 WARN  IntelPairHmm - Flush-to-zero (FTZ) is enabled when running PairHMM
+01:08:26.898 INFO  IntelPairHmm - Available threads: 4
+01:08:26.898 INFO  IntelPairHmm - Requested threads: 4
+01:08:26.898 INFO  PairHMM - Using the OpenMP multi-threaded AVX-accelerated native PairHMM implementation
+01:08:26.947 INFO  ProgressMeter - Starting traversal
+01:08:26.948 INFO  ProgressMeter -        Current Locus  Elapsed Minutes     Regions Processed   Regions/Minute
+01:08:37.016 INFO  ProgressMeter -    NC_000913.3:26821              0.2                   160            953.6
+01:08:47.183 INFO  ProgressMeter -    NC_000913.3:84189              0.3                   490           1452.9
+01:08:57.286 INFO  ProgressMeter -   NC_000913.3:146331              0.5                   840           1661.3
+01:09:07.466 INFO  ProgressMeter -   NC_000913.3:223799              0.7                  1250           1851.0
+01:09:20.830 INFO  ProgressMeter -   NC_000913.3:227027              0.9                  1270           1414.2
+01:09:33.515 INFO  ProgressMeter -   NC_000913.3:238743              1.1                  1350           1216.8
+01:09:45.715 INFO  ProgressMeter -   NC_000913.3:268246              1.3                  1530           1165.5
+01:09:57.054 INFO  ProgressMeter -   NC_000913.3:293731              1.5                  1680           1118.7
+01:10:08.534 INFO  ProgressMeter -   NC_000913.3:318362              1.7                  1840           1086.8
+01:10:18.870 INFO  ProgressMeter -   NC_000913.3:391598              1.9                  2300           1233.0
+01:10:28.898 INFO  ProgressMeter -   NC_000913.3:508818              2.0                  3000           1476.0
+01:10:38.932 INFO  ProgressMeter -   NC_000913.3:578834              2.2                  3430           1559.3
+01:10:49.623 INFO  ProgressMeter -   NC_000913.3:636048              2.4                  3770           1585.4
+01:11:00.036 INFO  ProgressMeter -   NC_000913.3:716886              2.6                  4250           1665.7
+01:11:11.602 INFO  ProgressMeter -   NC_000913.3:738671              2.7                  4390           1599.7
+01:11:22.187 INFO  ProgressMeter -   NC_000913.3:848320              2.9                  5020           1718.8
+01:11:33.148 INFO  ProgressMeter -   NC_000913.3:926596              3.1                  5500           1772.3
+01:11:43.154 INFO  ProgressMeter -  NC_000913.3:1027169              3.3                  6090           1862.3
+01:11:53.853 INFO  ProgressMeter -  NC_000913.3:1089106              3.4                  6460           1873.3
+01:12:04.601 INFO  ProgressMeter -  NC_000913.3:1103880              3.6                  6550           1805.6
+01:12:14.871 INFO  ProgressMeter -  NC_000913.3:1198163              3.8                  7110           1871.7
+01:12:25.276 INFO  ProgressMeter -  NC_000913.3:1210801              4.0                  7200           1812.6
+01:12:38.599 INFO  ProgressMeter -  NC_000913.3:1224876              4.2                  7290           1738.1
+01:12:48.727 INFO  ProgressMeter -  NC_000913.3:1299298              4.4                  7750           1776.3
+01:12:59.032 INFO  ProgressMeter -  NC_000913.3:1413340              4.5                  8440           1861.2
+01:13:09.053 INFO  ProgressMeter -  NC_000913.3:1462647              4.7                  8760           1863.1
+01:13:19.589 INFO  ProgressMeter -  NC_000913.3:1527406              4.9                  9170           1880.1
+01:13:29.746 INFO  ProgressMeter -  NC_000913.3:1550675              5.0                  9320           1846.8
+01:13:40.363 INFO  ProgressMeter -  NC_000913.3:1616844              5.2                  9730           1862.7
+01:13:50.388 INFO  ProgressMeter -  NC_000913.3:1651827              5.4                  9950           1845.8
+01:14:00.470 INFO  ProgressMeter -  NC_000913.3:1712595              5.6                 10330           1858.3
+01:14:03.973 INFO  HaplotypeCaller - 81563 read(s) filtered by: ((((((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter) AND NonZeroReferenceLengthAlignmentReadFilter) AND GoodCigarReadFilter) AND WellformedReadFilter)
   81563 read(s) filtered by: (((((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter) AND NonZeroReferenceLengthAlignmentReadFilter) AND GoodCigarReadFilter)
       81563 read(s) filtered by: ((((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter) AND NonZeroReferenceLengthAlignmentReadFilter)
           81563 read(s) filtered by: (((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter)
@@ -245,16 +270,22 @@ Running:
                               62977 read(s) filtered by: MappingQualityReadFilter 
                   18586 read(s) filtered by: NotDuplicateReadFilter 
 
-22:33:01.382 INFO  ProgressMeter -  NC_000913.3:1768478              7.0                 10646           1517.9
-22:33:01.382 INFO  ProgressMeter - Traversal complete. Processed 10646 total regions in 7.0 minutes.
-22:33:01.407 INFO  VectorLoglessPairHMM - Time spent in setup for JNI call : 0.36749464000000004
-22:33:01.407 INFO  PairHMM - Total compute time in PairHMM computeLogLikelihoods() : 170.70137505300002
-22:33:01.407 INFO  SmithWatermanAligner - Total compute time in java Smith-Waterman : 116.47 sec
-22:33:01.407 INFO  HaplotypeCaller - Shutting down engine
-[2018年4月11日 下午10时33分01秒] org.broadinstitute.hellbender.tools.walkers.haplotypecaller.HaplotypeCaller done. Elapsed time: 7.04 minutes.
-Runtime.totalMemory()=760217600
+01:14:03.973 INFO  ProgressMeter -  NC_000913.3:1768478              5.6                 10646           1895.3
+01:14:03.973 INFO  ProgressMeter - Traversal complete. Processed 10646 total regions in 5.6 minutes.
+01:14:04.009 INFO  VectorLoglessPairHMM - Time spent in setup for JNI call : 0.30023442300000003
+01:14:04.009 INFO  PairHMM - Total compute time in PairHMM computeLogLikelihoods() : 123.880874769
+01:14:04.009 INFO  SmithWatermanAligner - Total compute time in java Smith-Waterman : 97.80 sec
+01:14:04.010 INFO  HaplotypeCaller - Shutting down engine
+[2018年5月14日 上午01时14分04秒] org.broadinstitute.hellbender.tools.walkers.haplotypecaller.HaplotypeCaller done. Elapsed time: 8.15 minutes.
+Runtime.totalMemory()=709885952
 
-real	7m5.041s
-user	16m37.607s
-sys	0m1.795s
-18/04/11 22:33:02 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+real	8m11.698s
+user	13m0.784s
+sys	0m1.499s
+
+###COMMAND LINE###：
+/home/elon/hadoop/bin/hadoop fs -put -f SRR3226040.g.vcf /wgsv2/output/gvcf
+18/05/14 01:14:05 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+
+

@@ -1,5 +1,21 @@
-18/04/11 22:04:13 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-18/04/11 22:04:15 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+###COMMAND LINE###：
+/home/elon/hadoop/bin/hadoop fs -get /wgsv2/input/fastq/SRR3226036_1.fastq.gz
+18/05/14 00:40:23 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+real	0m2.595s
+user	0m4.678s
+sys	0m0.229s
+
+###COMMAND LINE###：
+/home/elon/hadoop/bin/hadoop fs -get /wgsv2/input/fastq/SRR3226036_2.fastq.gz
+18/05/14 00:40:25 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+real	0m2.750s
+user	0m4.262s
+sys	0m0.355s
+
+###COMMAND LINE###：
+/home/elon/biosoft/bwa/0.7.12/bwa mem -t 4 -R @RG\tID:SRR3226036\tPL:illumina\tSM:E.coli_K12_SRR3226036 /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa SRR3226036_1.fastq.gz SRR3226036_2.fastq.gz | /home/elon/biosoft/samtools/1.0/bin/samtools view -Sb - > SRR3226036.bam
 [M::bwa_idx_load_from_disk] read 0 ALT contigs
 [M::process] read 531370 sequences (40000095 bp)...
 [M::process] read 531330 sequences (40000150 bp)...
@@ -25,7 +41,7 @@
 [M::mem_pestat] mean and std.dev: (1071.63, 897.63)
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 5361)
 [M::mem_pestat] skip orientation RF
-[M::mem_process_seqs] Processed 531370 reads in 214.924 CPU sec, 54.641 real sec
+[M::mem_process_seqs] Processed 531370 reads in 191.023 CPU sec, 49.052 real sec
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (4709, 86611, 645, 4566)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
 [M::mem_pestat] (25, 50, 75) percentile: (429, 804, 1650)
@@ -49,7 +65,7 @@
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 5217)
 [M::mem_pestat] skip orientation RF
 [M::process] read 531082 sequences (40000142 bp)...
-[M::mem_process_seqs] Processed 531330 reads in 212.907 CPU sec, 56.019 real sec
+[M::mem_process_seqs] Processed 531330 reads in 188.702 CPU sec, 50.647 real sec
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (4736, 86151, 630, 4838)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
 [M::mem_pestat] (25, 50, 75) percentile: (423, 831, 1639)
@@ -73,7 +89,7 @@
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 5589)
 [M::mem_pestat] skip orientation RF
 [M::process] read 531090 sequences (40000070 bp)...
-[M::mem_process_seqs] Processed 531082 reads in 229.648 CPU sec, 59.909 real sec
+[M::mem_process_seqs] Processed 531082 reads in 194.163 CPU sec, 52.386 real sec
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (4857, 85857, 664, 4890)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
 [M::mem_pestat] (25, 50, 75) percentile: (428, 828, 1672)
@@ -97,7 +113,7 @@
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 5623)
 [M::mem_pestat] skip orientation RF
 [M::process] read 349050 sequences (26285820 bp)...
-[M::mem_process_seqs] Processed 531090 reads in 228.728 CPU sec, 59.627 real sec
+[M::mem_process_seqs] Processed 531090 reads in 195.376 CPU sec, 53.476 real sec
 [M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (3185, 56197, 446, 3113)
 [M::mem_pestat] analyzing insert size distribution for orientation FF...
 [M::mem_pestat] (25, 50, 75) percentile: (428, 835, 1631)
@@ -120,96 +136,107 @@
 [M::mem_pestat] mean and std.dev: (1069.64, 888.63)
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 5425)
 [M::mem_pestat] skip orientation RF
-[M::mem_process_seqs] Processed 349050 reads in 142.852 CPU sec, 37.847 real sec
+[M::mem_process_seqs] Processed 349050 reads in 123.855 CPU sec, 33.581 real sec
 [main] Version: 0.7.12-r1039
 [main] CMD: /home/elon/biosoft/bwa/0.7.12/bwa mem -t 4 -R @RG\tID:SRR3226036\tPL:illumina\tSM:E.coli_K12_SRR3226036 /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa SRR3226036_1.fastq.gz SRR3226036_2.fastq.gz
-[main] Real time: 272.411 sec; CPU: 1030.050 sec
+[main] Real time: 243.018 sec; CPU: 894.116 sec
 
-real	4m32.641s
-user	17m40.744s
-sys	0m2.647s
+real	4m3.289s
+user	15m19.565s
+sys	0m3.291s
 
-real	0m11.544s
-user	0m26.980s
-sys	0m0.363s
+###COMMAND LINE###：
+/home/elon/biosoft/samtools/1.0/bin/samtools sort -@ 4 -m 4G -O bam -o SRR3226036.sorted.bam SRR3226036.bam -T PREFIX.bam
+
+real	0m11.573s
+user	0m26.625s
+sys	0m0.422s
+
+###COMMAND LINE###：
+/home/elon/biosoft/gatk/4.0/gatk MarkDuplicates -I SRR3226036.sorted.bam -O SRR3226036.sorted.markdup.bam -M SRR3226036.sorted.markup_metrics.txt
 Using GATK jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar
 Running:
     java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=1 -jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar MarkDuplicates -I SRR3226036.sorted.bam -O SRR3226036.sorted.markdup.bam -M SRR3226036.sorted.markup_metrics.txt
-22:09:04.473 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_compression.so
-[Wed Apr 11 22:09:04 CST 2018] MarkDuplicates  --INPUT SRR3226036.sorted.bam --OUTPUT SRR3226036.sorted.markdup.bam --METRICS_FILE SRR3226036.sorted.markup_metrics.txt  --MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP 50000 --MAX_FILE_HANDLES_FOR_READ_ENDS_MAP 8000 --SORTING_COLLECTION_SIZE_RATIO 0.25 --TAG_DUPLICATE_SET_MEMBERS false --REMOVE_SEQUENCING_DUPLICATES false --TAGGING_POLICY DontTag --CLEAR_DT true --ADD_PG_TAG_TO_READS true --REMOVE_DUPLICATES false --ASSUME_SORTED false --DUPLICATE_SCORING_STRATEGY SUM_OF_BASE_QUALITIES --PROGRAM_RECORD_ID MarkDuplicates --PROGRAM_GROUP_NAME MarkDuplicates --READ_NAME_REGEX <optimized capture of last three ':' separated fields as numeric values> --OPTICAL_DUPLICATE_PIXEL_DISTANCE 100 --MAX_OPTICAL_DUPLICATE_SET_SIZE 300000 --VERBOSITY INFO --QUIET false --VALIDATION_STRINGENCY STRICT --COMPRESSION_LEVEL 1 --MAX_RECORDS_IN_RAM 500000 --CREATE_INDEX false --CREATE_MD5_FILE false --GA4GH_CLIENT_SECRETS client_secrets.json --help false --version false --showHidden false --USE_JDK_DEFLATER false --USE_JDK_INFLATER false
-[Wed Apr 11 22:09:04 CST 2018] Executing as elon@longsl on Linux 4.13.0-38-generic amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_161-b12; Deflater: Intel; Inflater: Intel; Picard version: Version:4.0.2.1
-INFO	2018-04-11 22:09:04	MarkDuplicates	Start of doWork freeMemory: 190110544; totalMemory: 199229440; maxMemory: 1756364800
-INFO	2018-04-11 22:09:04	MarkDuplicates	Reading input file and constructing read end information.
-INFO	2018-04-11 22:09:04	MarkDuplicates	Will retain up to 6363640 data points before spilling to disk.
-WARNING	2018-04-11 22:09:04	AbstractOpticalDuplicateFinderCommandLineProgram	A field field parsed out of a read name was expected to contain an integer and did not. Read name: SRR3226036.4166. Cause: String 'SRR3226036.4166' did not start with a parsable number.
-INFO	2018-04-11 22:09:12	MarkDuplicates	Read     1,000,000 records.  Elapsed time: 00:00:07s.  Time for last 1,000,000:    7s.  Last read position: NC_000913.3:1,740,126
-INFO	2018-04-11 22:09:12	MarkDuplicates	Tracking 146 as yet unmatched pairs. 146 records in RAM.
-INFO	2018-04-11 22:09:12	MarkDuplicates	Read 1016598 records. 0 pairs never matched.
-INFO	2018-04-11 22:09:12	MarkDuplicates	After buildSortedReadEndLists freeMemory: 639202376; totalMemory: 812122112; maxMemory: 1756364800
-INFO	2018-04-11 22:09:12	MarkDuplicates	Will retain up to 54886400 duplicate indices before spilling to disk.
-INFO	2018-04-11 22:09:12	MarkDuplicates	Traversing read pair information and detecting duplicates.
-INFO	2018-04-11 22:09:13	MarkDuplicates	Traversing fragment information and detecting duplicates.
-INFO	2018-04-11 22:09:13	MarkDuplicates	Sorting list of duplicate records.
-INFO	2018-04-11 22:09:13	MarkDuplicates	After generateDuplicateIndexes freeMemory: 795724888; totalMemory: 1251475456; maxMemory: 1756364800
-INFO	2018-04-11 22:09:13	MarkDuplicates	Marking 35821 records as duplicates.
-INFO	2018-04-11 22:09:13	MarkDuplicates	Found 0 optical duplicate clusters.
-INFO	2018-04-11 22:09:13	MarkDuplicates	Reads are assumed to be ordered by: coordinate
-INFO	2018-04-11 22:09:24	MarkDuplicates	Before output close freeMemory: 1315719544; totalMemory: 1336410112; maxMemory: 1756364800
-INFO	2018-04-11 22:09:24	MarkDuplicates	After output close freeMemory: 1305839744; totalMemory: 1321730048; maxMemory: 1756364800
-[Wed Apr 11 22:09:24 CST 2018] picard.sam.markduplicates.MarkDuplicates done. Elapsed time: 0.34 minutes.
-Runtime.totalMemory()=1321730048
+00:44:45.188 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_compression.so
+[Mon May 14 00:44:45 CST 2018] MarkDuplicates  --INPUT SRR3226036.sorted.bam --OUTPUT SRR3226036.sorted.markdup.bam --METRICS_FILE SRR3226036.sorted.markup_metrics.txt  --MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP 50000 --MAX_FILE_HANDLES_FOR_READ_ENDS_MAP 8000 --SORTING_COLLECTION_SIZE_RATIO 0.25 --TAG_DUPLICATE_SET_MEMBERS false --REMOVE_SEQUENCING_DUPLICATES false --TAGGING_POLICY DontTag --CLEAR_DT true --ADD_PG_TAG_TO_READS true --REMOVE_DUPLICATES false --ASSUME_SORTED false --DUPLICATE_SCORING_STRATEGY SUM_OF_BASE_QUALITIES --PROGRAM_RECORD_ID MarkDuplicates --PROGRAM_GROUP_NAME MarkDuplicates --READ_NAME_REGEX <optimized capture of last three ':' separated fields as numeric values> --OPTICAL_DUPLICATE_PIXEL_DISTANCE 100 --MAX_OPTICAL_DUPLICATE_SET_SIZE 300000 --VERBOSITY INFO --QUIET false --VALIDATION_STRINGENCY STRICT --COMPRESSION_LEVEL 1 --MAX_RECORDS_IN_RAM 500000 --CREATE_INDEX false --CREATE_MD5_FILE false --GA4GH_CLIENT_SECRETS client_secrets.json --help false --version false --showHidden false --USE_JDK_DEFLATER false --USE_JDK_INFLATER false
+[Mon May 14 00:44:45 CST 2018] Executing as elon@longsl on Linux 4.13.0-39-generic amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_161-b12; Deflater: Intel; Inflater: Intel; Picard version: Version:4.0.2.1
+INFO	2018-05-14 00:44:45	MarkDuplicates	Start of doWork freeMemory: 193365208; totalMemory: 202375168; maxMemory: 1756364800
+INFO	2018-05-14 00:44:45	MarkDuplicates	Reading input file and constructing read end information.
+INFO	2018-05-14 00:44:45	MarkDuplicates	Will retain up to 6363640 data points before spilling to disk.
+WARNING	2018-05-14 00:44:45	AbstractOpticalDuplicateFinderCommandLineProgram	A field field parsed out of a read name was expected to contain an integer and did not. Read name: SRR3226036.4166. Cause: String 'SRR3226036.4166' did not start with a parsable number.
+INFO	2018-05-14 00:44:52	MarkDuplicates	Read     1,000,000 records.  Elapsed time: 00:00:07s.  Time for last 1,000,000:    7s.  Last read position: NC_000913.3:1,740,126
+INFO	2018-05-14 00:44:52	MarkDuplicates	Tracking 146 as yet unmatched pairs. 146 records in RAM.
+INFO	2018-05-14 00:44:52	MarkDuplicates	Read 1016598 records. 0 pairs never matched.
+INFO	2018-05-14 00:44:53	MarkDuplicates	After buildSortedReadEndLists freeMemory: 586290192; totalMemory: 758120448; maxMemory: 1756364800
+INFO	2018-05-14 00:44:53	MarkDuplicates	Will retain up to 54886400 duplicate indices before spilling to disk.
+INFO	2018-05-14 00:44:53	MarkDuplicates	Traversing read pair information and detecting duplicates.
+INFO	2018-05-14 00:44:53	MarkDuplicates	Traversing fragment information and detecting duplicates.
+INFO	2018-05-14 00:44:53	MarkDuplicates	Sorting list of duplicate records.
+INFO	2018-05-14 00:44:54	MarkDuplicates	After generateDuplicateIndexes freeMemory: 854276856; totalMemory: 1311244288; maxMemory: 1756364800
+INFO	2018-05-14 00:44:54	MarkDuplicates	Marking 35821 records as duplicates.
+INFO	2018-05-14 00:44:54	MarkDuplicates	Found 0 optical duplicate clusters.
+INFO	2018-05-14 00:44:54	MarkDuplicates	Reads are assumed to be ordered by: coordinate
+INFO	2018-05-14 00:45:04	MarkDuplicates	Before output close freeMemory: 1313680688; totalMemory: 1334312960; maxMemory: 1756364800
+INFO	2018-05-14 00:45:04	MarkDuplicates	After output close freeMemory: 1301766408; totalMemory: 1317535744; maxMemory: 1756364800
+[Mon May 14 00:45:04 CST 2018] picard.sam.markduplicates.MarkDuplicates done. Elapsed time: 0.32 minutes.
+Runtime.totalMemory()=1317535744
 
-real	0m22.753s
-user	0m46.056s
-sys	0m2.003s
+real	0m21.955s
+user	0m43.478s
+sys	0m2.287s
 
-real	0m2.480s
-user	0m2.437s
-sys	0m0.044s
+###COMMAND LINE###：
+time /home/elon/biosoft/samtools/1.0/bin/samtools index SRR3226036.sorted.markdup.bam
+
+real	0m2.191s
+user	0m2.175s
+sys	0m0.016s
+
+###COMMAND LINE###：
+/home/elon/biosoft/gatk/4.0/gatk HaplotypeCaller -R /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa --emit-ref-confidence GVCF -I SRR3226036.sorted.markdup.bam -O SRR3226036.g.vcf
 Using GATK jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar
 Running:
     java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=1 -jar /home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar HaplotypeCaller -R /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa --emit-ref-confidence GVCF -I SRR3226036.sorted.markdup.bam -O SRR3226036.g.vcf
-22:09:30.219 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_compression.so
-22:09:30.345 INFO  HaplotypeCaller - ------------------------------------------------------------
-22:09:30.346 INFO  HaplotypeCaller - The Genome Analysis Toolkit (GATK) v4.0.2.1
-22:09:30.346 INFO  HaplotypeCaller - For support and documentation go to https://software.broadinstitute.org/gatk/
-22:09:30.346 INFO  HaplotypeCaller - Executing as elon@longsl on Linux v4.13.0-38-generic amd64
-22:09:30.346 INFO  HaplotypeCaller - Java runtime: Java HotSpot(TM) 64-Bit Server VM v1.8.0_161-b12
-22:09:30.347 INFO  HaplotypeCaller - Start Date/Time: 2018年4月11日 下午10时09分30秒
-22:09:30.347 INFO  HaplotypeCaller - ------------------------------------------------------------
-22:09:30.347 INFO  HaplotypeCaller - ------------------------------------------------------------
-22:09:30.348 INFO  HaplotypeCaller - HTSJDK Version: 2.14.3
-22:09:30.348 INFO  HaplotypeCaller - Picard Version: 2.17.2
-22:09:30.348 INFO  HaplotypeCaller - HTSJDK Defaults.COMPRESSION_LEVEL : 1
-22:09:30.348 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
-22:09:30.348 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
-22:09:30.348 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
-22:09:30.348 INFO  HaplotypeCaller - Deflater: IntelDeflater
-22:09:30.348 INFO  HaplotypeCaller - Inflater: IntelInflater
-22:09:30.348 INFO  HaplotypeCaller - GCS max retries/reopens: 20
-22:09:30.348 INFO  HaplotypeCaller - Using google-cloud-java patch 6d11bef1c81f885c26b2b56c8616b7a705171e4f from https://github.com/droazen/google-cloud-java/tree/dr_all_nio_fixes
-22:09:30.348 INFO  HaplotypeCaller - Initializing engine
-22:09:30.763 INFO  HaplotypeCaller - Done initializing engine
-22:09:30.767 INFO  HaplotypeCallerEngine - Standard Emitting and Calling confidence set to 0.0 for reference-model confidence output
-22:09:30.767 INFO  HaplotypeCallerEngine - All sites annotated with PLs forced to true for reference-model confidence output
-22:09:31.385 INFO  NativeLibraryLoader - Loading libgkl_utils.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_utils.so
-22:09:31.386 INFO  NativeLibraryLoader - Loading libgkl_pairhmm_omp.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_pairhmm_omp.so
-22:09:31.437 WARN  IntelPairHmm - Flush-to-zero (FTZ) is enabled when running PairHMM
-22:09:31.437 INFO  IntelPairHmm - Available threads: 4
-22:09:31.437 INFO  IntelPairHmm - Requested threads: 4
-22:09:31.437 INFO  PairHMM - Using the OpenMP multi-threaded AVX-accelerated native PairHMM implementation
-22:09:31.488 INFO  ProgressMeter - Starting traversal
-22:09:31.488 INFO  ProgressMeter -        Current Locus  Elapsed Minutes     Regions Processed   Regions/Minute
-22:09:41.510 INFO  ProgressMeter -   NC_000913.3:121752              0.2                   440           2634.2
-22:09:56.362 INFO  ProgressMeter -   NC_000913.3:227027              0.4                   820           1978.0
-22:10:08.326 INFO  ProgressMeter -   NC_000913.3:265118              0.6                   970           1579.9
-22:10:18.385 INFO  ProgressMeter -   NC_000913.3:306044              0.8                  1140           1458.5
-22:10:28.410 INFO  ProgressMeter -   NC_000913.3:685162              0.9                  2460           2593.0
-22:10:38.450 INFO  ProgressMeter -   NC_000913.3:897146              1.1                  3230           2894.2
-22:10:48.483 INFO  ProgressMeter -  NC_000913.3:1208561              1.3                  4300           3350.9
-22:10:58.558 INFO  ProgressMeter -  NC_000913.3:1532121              1.5                  5430           3741.8
-22:11:08.604 INFO  ProgressMeter -  NC_000913.3:1724039              1.6                  6110           3774.9
-22:11:10.102 INFO  HaplotypeCaller - 86215 read(s) filtered by: ((((((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter) AND NonZeroReferenceLengthAlignmentReadFilter) AND GoodCigarReadFilter) AND WellformedReadFilter)
+00:45:09.236 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_compression.so
+00:47:40.716 INFO  HaplotypeCaller - ------------------------------------------------------------
+00:47:40.717 INFO  HaplotypeCaller - The Genome Analysis Toolkit (GATK) v4.0.2.1
+00:47:40.717 INFO  HaplotypeCaller - For support and documentation go to https://software.broadinstitute.org/gatk/
+00:47:40.717 INFO  HaplotypeCaller - Executing as elon@longsl on Linux v4.13.0-39-generic amd64
+00:47:40.718 INFO  HaplotypeCaller - Java runtime: Java HotSpot(TM) 64-Bit Server VM v1.8.0_161-b12
+00:47:40.718 INFO  HaplotypeCaller - Start Date/Time: 2018年5月14日 上午12时45分09秒
+00:47:40.718 INFO  HaplotypeCaller - ------------------------------------------------------------
+00:47:40.718 INFO  HaplotypeCaller - ------------------------------------------------------------
+00:47:40.719 INFO  HaplotypeCaller - HTSJDK Version: 2.14.3
+00:47:40.719 INFO  HaplotypeCaller - Picard Version: 2.17.2
+00:47:40.719 INFO  HaplotypeCaller - HTSJDK Defaults.COMPRESSION_LEVEL : 1
+00:47:40.719 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+00:47:40.719 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+00:47:40.719 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+00:47:40.720 INFO  HaplotypeCaller - Deflater: IntelDeflater
+00:47:40.720 INFO  HaplotypeCaller - Inflater: IntelInflater
+00:47:40.720 INFO  HaplotypeCaller - GCS max retries/reopens: 20
+00:47:40.720 INFO  HaplotypeCaller - Using google-cloud-java patch 6d11bef1c81f885c26b2b56c8616b7a705171e4f from https://github.com/droazen/google-cloud-java/tree/dr_all_nio_fixes
+00:47:40.720 INFO  HaplotypeCaller - Initializing engine
+00:47:41.140 INFO  HaplotypeCaller - Done initializing engine
+00:47:41.145 INFO  HaplotypeCallerEngine - Standard Emitting and Calling confidence set to 0.0 for reference-model confidence output
+00:47:41.145 INFO  HaplotypeCallerEngine - All sites annotated with PLs forced to true for reference-model confidence output
+00:47:41.766 INFO  NativeLibraryLoader - Loading libgkl_utils.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_utils.so
+00:47:41.767 INFO  NativeLibraryLoader - Loading libgkl_pairhmm_omp.so from jar:file:/home/elon/biosoft/gatk/4.0/gatk-package-4.0.2.1-local.jar!/com/intel/gkl/native/libgkl_pairhmm_omp.so
+00:47:41.817 WARN  IntelPairHmm - Flush-to-zero (FTZ) is enabled when running PairHMM
+00:47:41.818 INFO  IntelPairHmm - Available threads: 4
+00:47:41.818 INFO  IntelPairHmm - Requested threads: 4
+00:47:41.818 INFO  PairHMM - Using the OpenMP multi-threaded AVX-accelerated native PairHMM implementation
+00:47:41.868 INFO  ProgressMeter - Starting traversal
+00:47:41.868 INFO  ProgressMeter -        Current Locus  Elapsed Minutes     Regions Processed   Regions/Minute
+00:47:51.977 INFO  ProgressMeter -   NC_000913.3:136483              0.2                   490           2908.3
+00:48:06.552 INFO  ProgressMeter -   NC_000913.3:228501              0.4                   830           2017.5
+00:48:16.871 INFO  ProgressMeter -   NC_000913.3:268531              0.6                   990           1697.0
+00:48:26.874 INFO  ProgressMeter -   NC_000913.3:570570              0.8                  2060           2746.3
+00:48:36.911 INFO  ProgressMeter -   NC_000913.3:772413              0.9                  2790           3041.3
+00:48:46.938 INFO  ProgressMeter -  NC_000913.3:1120701              1.1                  4000           3688.3
+00:48:56.958 INFO  ProgressMeter -  NC_000913.3:1451016              1.3                  5140           4107.1
+00:49:07.799 INFO  ProgressMeter -  NC_000913.3:1688735              1.4                  5990           4182.4
+00:49:09.755 INFO  HaplotypeCaller - 86215 read(s) filtered by: ((((((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter) AND NonZeroReferenceLengthAlignmentReadFilter) AND GoodCigarReadFilter) AND WellformedReadFilter)
   86215 read(s) filtered by: (((((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter) AND NonZeroReferenceLengthAlignmentReadFilter) AND GoodCigarReadFilter)
       86215 read(s) filtered by: ((((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter) AND NonZeroReferenceLengthAlignmentReadFilter)
           86215 read(s) filtered by: (((((MappingQualityReadFilter AND MappingQualityAvailableReadFilter) AND MappedReadFilter) AND NotSecondaryAlignmentReadFilter) AND NotDuplicateReadFilter) AND PassesVendorQualityCheckReadFilter)
@@ -220,16 +247,20 @@ Running:
                               58854 read(s) filtered by: MappingQualityReadFilter 
                   27361 read(s) filtered by: NotDuplicateReadFilter 
 
-22:11:10.102 INFO  ProgressMeter -  NC_000913.3:1768537              1.6                  6263           3810.6
-22:11:10.102 INFO  ProgressMeter - Traversal complete. Processed 6263 total regions in 1.6 minutes.
-22:11:10.150 INFO  VectorLoglessPairHMM - Time spent in setup for JNI call : 0.042597917000000006
-22:11:10.150 INFO  PairHMM - Total compute time in PairHMM computeLogLikelihoods() : 17.12201814
-22:11:10.150 INFO  SmithWatermanAligner - Total compute time in java Smith-Waterman : 14.77 sec
-22:11:10.150 INFO  HaplotypeCaller - Shutting down engine
-[2018年4月11日 下午10时11分10秒] org.broadinstitute.hellbender.tools.walkers.haplotypecaller.HaplotypeCaller done. Elapsed time: 1.67 minutes.
-Runtime.totalMemory()=326107136
+00:49:09.756 INFO  ProgressMeter -  NC_000913.3:1768537              1.5                  6263           4275.7
+00:49:09.756 INFO  ProgressMeter - Traversal complete. Processed 6263 total regions in 1.5 minutes.
+00:49:09.792 INFO  VectorLoglessPairHMM - Time spent in setup for JNI call : 0.037844430000000005
+00:49:09.792 INFO  PairHMM - Total compute time in PairHMM computeLogLikelihoods() : 13.404817322000001
+00:49:09.793 INFO  SmithWatermanAligner - Total compute time in java Smith-Waterman : 12.88 sec
+00:49:09.793 INFO  HaplotypeCaller - Shutting down engine
+[2018年5月14日 上午12时49分09秒] org.broadinstitute.hellbender.tools.walkers.haplotypecaller.HaplotypeCaller done. Elapsed time: 4.01 minutes.
+Runtime.totalMemory()=719323136
 
-real	1m42.905s
-user	3m28.336s
-sys	0m0.768s
-18/04/11 22:11:11 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+real	4m3.357s
+user	2m59.557s
+sys	0m0.920s
+
+###COMMAND LINE###：
+/home/elon/hadoop/bin/hadoop fs -put -f SRR3226036.g.vcf /wgsv2/output/gvcf
+18/05/14 00:49:10 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
