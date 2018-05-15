@@ -1,0 +1,43 @@
+2018-05-14 20:46:46  [ main:1 ] - [ DEBUG ]  setsid exited with exit code 0
+2018-05-14 20:46:47  [ main:238 ] - [ DEBUG ]  Mapping input (0, SRR3226035)
+2018-05-14 20:46:47  [ main:989 ] - [ DEBUG ]  Couldn't find template in cache for "wgsMapper.template"("zh_CN", UTF-8, parsed); will try to load it.
+2018-05-14 20:46:47  [ main:991 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper_zh_CN.template"): Not found
+2018-05-14 20:46:47  [ main:994 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper_zh.template"): Not found
+2018-05-14 20:46:47  [ main:995 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper.template"): Found
+2018-05-14 20:46:47  [ main:995 ] - [ DEBUG ]  Loading template for "wgsMapper.template"("zh_CN", UTF-8, parsed) from "/home/elon/IdeaProjects/wgs/wgsv2/wgs-templates/wgsMapper.template"
+2018-05-14 20:56:43  [ main:596319 ] - [ DEBUG ]  Matched expected output (1, SRR3226035) at position 0
+2018-05-14 21:04:25  [ main:1 ] - [ DEBUG ]  setsid exited with exit code 0
+2018-05-14 21:04:26  [ main:160 ] - [ DEBUG ]  Mapping input (0, SRR3226035)
+2018-05-14 21:04:26  [ main:820 ] - [ DEBUG ]  Couldn't find template in cache for "wgsMapper.template"("zh_CN", UTF-8, parsed); will try to load it.
+2018-05-14 21:04:26  [ main:821 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper_zh_CN.template"): Not found
+2018-05-14 21:04:26  [ main:823 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper_zh.template"): Not found
+2018-05-14 21:04:26  [ main:823 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper.template"): Found
+2018-05-14 21:04:26  [ main:823 ] - [ DEBUG ]  Loading template for "wgsMapper.template"("zh_CN", UTF-8, parsed) from "/home/elon/IdeaProjects/wgs/wgsv2/wgs-templates/wgsMapper.template"
+2018-05-14 21:04:57  [ main:0 ] - [ DEBUG ]  setsid exited with exit code 0
+2018-05-14 21:04:57  [ main:207 ] - [ DEBUG ]  Mapping input (0, SRR3226035)
+2018-05-14 21:04:58  [ main:937 ] - [ DEBUG ]  Couldn't find template in cache for "wgsMapper.template"("zh_CN", UTF-8, parsed); will try to load it.
+2018-05-14 21:04:58  [ main:939 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper_zh_CN.template"): Not found
+2018-05-14 21:04:58  [ main:942 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper_zh.template"): Not found
+2018-05-14 21:04:58  [ main:943 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper.template"): Found
+2018-05-14 21:04:58  [ main:943 ] - [ DEBUG ]  Loading template for "wgsMapper.template"("zh_CN", UTF-8, parsed) from "/home/elon/IdeaProjects/wgs/wgsv2/wgs-templates/wgsMapper.template"
+2018-05-14 21:06:15  [ main:0 ] - [ DEBUG ]  setsid exited with exit code 0
+2018-05-14 21:06:16  [ main:175 ] - [ DEBUG ]  Mapping input (0, SRR3226035)
+2018-05-14 21:06:16  [ main:896 ] - [ DEBUG ]  Couldn't find template in cache for "wgsMapper.template"("zh_CN", UTF-8, parsed); will try to load it.
+2018-05-14 21:06:16  [ main:898 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper_zh_CN.template"): Not found
+2018-05-14 21:06:16  [ main:900 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper_zh.template"): Not found
+2018-05-14 21:06:16  [ main:900 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper.template"): Found
+2018-05-14 21:06:16  [ main:900 ] - [ DEBUG ]  Loading template for "wgsMapper.template"("zh_CN", UTF-8, parsed) from "/home/elon/IdeaProjects/wgs/wgsv2/wgs-templates/wgsMapper.template"
+2018-05-14 21:07:50  [ main:1 ] - [ DEBUG ]  setsid exited with exit code 0
+2018-05-14 21:07:50  [ main:231 ] - [ DEBUG ]  Mapping input (0, SRR3226035)
+2018-05-14 21:07:51  [ main:966 ] - [ DEBUG ]  Couldn't find template in cache for "wgsMapper.template"("zh_CN", UTF-8, parsed); will try to load it.
+2018-05-14 21:07:51  [ main:968 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper_zh_CN.template"): Not found
+2018-05-14 21:07:51  [ main:969 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper_zh.template"): Not found
+2018-05-14 21:07:51  [ main:970 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper.template"): Found
+2018-05-14 21:07:51  [ main:970 ] - [ DEBUG ]  Loading template for "wgsMapper.template"("zh_CN", UTF-8, parsed) from "/home/elon/IdeaProjects/wgs/wgsv2/wgs-templates/wgsMapper.template"
+2018-05-14 21:09:59  [ main:0 ] - [ DEBUG ]  setsid exited with exit code 0
+2018-05-14 21:10:00  [ main:263 ] - [ DEBUG ]  Mapping input (0, SRR3226035)
+2018-05-14 21:10:00  [ main:949 ] - [ DEBUG ]  Couldn't find template in cache for "wgsMapper.template"("zh_CN", UTF-8, parsed); will try to load it.
+2018-05-14 21:10:00  [ main:951 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper_zh_CN.template"): Not found
+2018-05-14 21:10:00  [ main:952 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper_zh.template"): Not found
+2018-05-14 21:10:00  [ main:952 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper.template"): Found
+2018-05-14 21:10:00  [ main:952 ] - [ DEBUG ]  Loading template for "wgsMapper.template"("zh_CN", UTF-8, parsed) from "/home/elon/IdeaProjects/wgs/wgsv2/wgs-templates/wgsMapper.template"
