@@ -12,9 +12,9 @@ import java.util.HashMap;
 public class wgsMapper extends Mapper<LongWritable, Text, Text, Text> {
 
     // 定义日志存放的目录
-    private static String LOG_DIRECTORY = "/home/elon/IdeaProjects/wgs/wgsv3/wgs-logs";
+    private static String LOG_DIRECTORY = "/root/wgs/wgs-logs";
     // 定义shell脚本存放的目录
-    private static String SCRIPT_DIRECTORY = "/home/elon/IdeaProjects/wgs/wgsv3/wgs-scripts";
+    private static String SCRIPT_DIRECTORY = "/root/wgs/wgs-scripts";
 
     @Override
     protected void map(LongWritable key, Text value, Context context)

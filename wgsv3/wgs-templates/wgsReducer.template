@@ -10,11 +10,11 @@ export GATK=~/biosoft/gatk/3.6/GenomeAnalysisTK.jar
 export HADOOP=~/hadoop/bin
 
 # 定义参考序列
-export REF=~/wgs/input/fasta/E.coli_K12_MG1655.fa
+export REF=~/wgs/refrence/E.coli_K12_MG1655.fa
 # 定义单个节点可利用的线程数
-THREAD=4
+THREAD=1
 # 定义单个节点可利用的内存资源
-MEMORY=6G
+MEMORY=1G
 echo "############" `date "+%Y-%m-%d %H:%M:%S"` "############"
 echo "--- 开始合并处理样本 ${sample_name1} ${sample_name2} ${sample_name3} ${sample_name4} ${sample_name4} ${sample_name5} ${sample_name6} ${sample_name7} ${sample_name8} ${sample_name9} ---"
 
@@ -33,15 +33,15 @@ INPUT_FILE9=${sample_name9}.g.vcf
 cd /tmp
 
 # 从HDFS上download所有的GVCF文件
-$HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE1
-$HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE2
-$HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE3
-$HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE4
-$HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE5
-$HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE6
-$HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE7
-$HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE8
-$HADOOP/hadoop fs -get /wgsv2/output/gvcf/$INPUT_FILE9
+$HADOOP/hadoop fs -get /wgs/output/gvcf/$INPUT_FILE1
+$HADOOP/hadoop fs -get /wgs/output/gvcf/$INPUT_FILE2
+$HADOOP/hadoop fs -get /wgs/output/gvcf/$INPUT_FILE3
+$HADOOP/hadoop fs -get /wgs/output/gvcf/$INPUT_FILE4
+$HADOOP/hadoop fs -get /wgs/output/gvcf/$INPUT_FILE5
+$HADOOP/hadoop fs -get /wgs/output/gvcf/$INPUT_FILE6
+$HADOOP/hadoop fs -get /wgs/output/gvcf/$INPUT_FILE7
+$HADOOP/hadoop fs -get /wgs/output/gvcf/$INPUT_FILE8
+$HADOOP/hadoop fs -get /wgs/output/gvcf/$INPUT_FILE9
 echo "*** 从HDFS上获取所有相关的gVCF文件"
 
 # 合并所有的gVCF文件为VCF文件 -- E_coli_K12.vcf
@@ -69,8 +69,8 @@ time $SAMTOOLS/tabix -p vcf E_coli_K12.vcf.gz \
 
 ## 3. 上传最终的VCF文件以及索引文件到HDFS上
 echo "###COMMAND LINE###：" >&2
-echo "$HADOOP/hadoop fs -f -put E_coli_K12.vcf.gz* /wgsv2/output/vcf" >&2
-time $HADOOP/hadoop fs -f -put E_coli_K12.vcf.gz* /wgsv2/output/vcf \
+echo "$HADOOP/hadoop fs -f -put E_coli_K12.vcf.gz* /wgs/output/vcf" >&2
+time $HADOOP/hadoop fs -f -put E_coli_K12.vcf.gz* /wgs/output/vcf \
 && echo "*** 变异检测结果vcf文件上传到HDFS上" && echo "">&2
 
 rm -f E_coli_K12.vcf* *g.vcf*

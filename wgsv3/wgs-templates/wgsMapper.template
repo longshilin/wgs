@@ -11,12 +11,12 @@ export GATK=~/biosoft/gatk/4.0/gatk
 export HADOOP=~/hadoop/bin
 
 # 定义参考序列
-export REF=~/wgs/input/fasta/E.coli_K12_MG1655.fa
+export REF=~/wgs/refrence/E.coli_K12_MG1655.fa
 
 # 定义单个节点可利用的线程数
-THREAD=4
+THREAD=1
 # 定义单个节点可利用的内存资源
-MEMORY=6G
+MEMORY=1G
 
 # 定义RG INFO
 INFO_RG='@RG\tID:${sample_name}\tPL:illumina\tSM:E.coli_K12_${sample_name}'
@@ -31,12 +31,12 @@ INPUT_FILE_R2=${sample_name}_2.fastq.gz
 cd /tmp
 # 从HDFS上下载测序样本Block块
 echo "###COMMAND LINE###：" >&2
-echo "$HADOOP/hadoop fs -get /wgsv2/input/fastq/$INPUT_FILE_R1" >&2
-time $HADOOP/hadoop fs -get /wgsv2/input/fastq/$INPUT_FILE_R1 && echo "" >&2
+echo "$HADOOP/hadoop fs -get /wgs/input/fastq/$INPUT_FILE_R1" >&2
+time $HADOOP/hadoop fs -get /wgs/input/fastq/$INPUT_FILE_R1 && echo "" >&2
 
 echo "###COMMAND LINE###：" >&2
-echo "$HADOOP/hadoop fs -get /wgsv2/input/fastq/$INPUT_FILE_R2" >&2
-time $HADOOP/hadoop fs -get /wgsv2/input/fastq/$INPUT_FILE_R2
+echo "$HADOOP/hadoop fs -get /wgs/input/fastq/$INPUT_FILE_R2" >&2
+time $HADOOP/hadoop fs -get /wgs/input/fastq/$INPUT_FILE_R2
 echo "*** 从HDFS上下载样本数据块" && echo "" >&2
 
 # ××××××  基因测序 ×××××××
@@ -84,8 +84,8 @@ rm -f ${sample_name}.sorted.markdup.bam* ${sample_name}.sorted.markdup_metrics.t
 
 # 将各个样本分区的变异检测gvcf文件上传到HDFS上
 echo "###COMMAND LINE###：" >&2
-echo "$HADOOP/hadoop fs -put -f ${sample_name}.g.vcf /wgsv2/output/gvcf" >&2
-time $HADOOP/hadoop fs -put -f ${sample_name}.g.vcf /wgsv2/output/gvcf && echo "*** 变异检测结果gvcf文件上传到HDFS上" && echo "">&2
+echo "$HADOOP/hadoop fs -put -f ${sample_name}.g.vcf /wgs/output/gvcf" >&2
+time $HADOOP/hadoop fs -put -f ${sample_name}.g.vcf /wgs/output/gvcf && echo "*** 变异检测结果gvcf文件上传到HDFS上" && echo "">&2
 
 echo "--- 结束处理样本 ${sample_name} ---"
 echo "############" `date "+%Y-%m-%d %H:%M:%S"` "############" && echo ""

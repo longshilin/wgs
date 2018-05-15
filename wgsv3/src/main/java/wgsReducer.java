@@ -12,9 +12,9 @@ import java.util.Iterator;
 public class wgsReducer extends Reducer<Text, Text, Text, Text> {
 
     // 定义日志存放的目录
-    private static String LOG_DIRECTORY = "/home/elon/IdeaProjects/wgs/wgsv3/wgs-logs";
+    private static String LOG_DIRECTORY = "/root/wgs/wgs-logs";
     // 定义shell脚本存放的目录
-    private static String SCRIPT_DIRECTORY = "/home/elon/IdeaProjects/wgs/wgsv3/wgs-scripts";
+    private static String SCRIPT_DIRECTORY = "/root/wgs/wgs-scripts";
 
     @Override
     protected void reduce(Text key, Iterable<Text> values, Context context)

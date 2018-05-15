@@ -28,7 +28,8 @@ public class wgsDriver extends Configured implements Tool {
         Configuration conf = new Configuration();
 
         // 设置hadoop采用本地模式执行作业
-        conf.set("mapred.job.tracker", "local");
+        // conf.set("mapred.job.tracker", "local");
+
         // 输入文件的每一行用一个mapper来处理
         conf.setInt(NLineInputFormat.LINES_PER_MAP, 1);
 

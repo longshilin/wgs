@@ -22,7 +22,7 @@ public class TemplateEngine {
     private static AtomicBoolean initialized = new AtomicBoolean(false);
 
     // freemarker templates 存放目录
-    protected static String TEMPLATE_DIRECTORY = "/home/elon/IdeaProjects/wgs/wgsv3/wgs-templates";
+    protected static String TEMPLATE_DIRECTORY = "/root/wgs/wgs-templates";
 
     public static void init() throws Exception {
         if (initialized.get()) {
