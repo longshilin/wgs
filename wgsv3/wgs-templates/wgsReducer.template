@@ -5,12 +5,12 @@
 # Time: 2018-4-5
 
 # 该脚本需要完成的是对各个样本分区的VCGF文件做一个merge操作
-export SAMTOOLS=~/biosoft/samtools/1.0/bin
-export GATK=~/biosoft/gatk/3.6/GenomeAnalysisTK.jar
-export HADOOP=~/hadoop/bin
+export SAMTOOLS=/root/biosoft/samtools/1.0/bin
+export GATK=/root/biosoft/gatk/3.6/GenomeAnalysisTK.jar
+export HADOOP=/root/hadoop/bin
 
 # 定义参考序列
-export REF=~/wgs/refrence/E.coli_K12_MG1655.fa
+export REF=/root/wgs/reference/E.coli_K12_MG1655.fa
 # 定义单个节点可利用的线程数
 THREAD=1
 # 定义单个节点可利用的内存资源

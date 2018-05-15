@@ -5,13 +5,13 @@
 # Time: 2018-4-5
 
 # 脚本所需的环境变量定义
-export BWA=~/biosoft/bwa/0.7.12
-export SAMTOOLS=~/biosoft/samtools/1.0/bin
-export GATK=~/biosoft/gatk/4.0/gatk
-export HADOOP=~/hadoop/bin
+export BWA=/root/biosoft/bwa/0.7.12
+export SAMTOOLS=/root/biosoft/samtools/1.0/bin
+export GATK=/root/biosoft/gatk/4.0/gatk
+export HADOOP=/root/hadoop/bin
 
 # 定义参考序列
-export REF=~/wgs/refrence/E.coli_K12_MG1655.fa
+export REF=/root/wgs/reference/E.coli_K12_MG1655.fa
 
 # 定义单个节点可利用的线程数
 THREAD=1
@@ -32,11 +32,14 @@ cd /tmp
 # 从HDFS上下载测序样本Block块
 echo "###COMMAND LINE###：" >&2
 echo "$HADOOP/hadoop fs -get /wgs/input/fastq/$INPUT_FILE_R1" >&2
+
 time $HADOOP/hadoop fs -get /wgs/input/fastq/$INPUT_FILE_R1 && echo "" >&2
 
 echo "###COMMAND LINE###：" >&2
 echo "$HADOOP/hadoop fs -get /wgs/input/fastq/$INPUT_FILE_R2" >&2
-time $HADOOP/hadoop fs -get /wgs/input/fastq/$INPUT_FILE_R2
+
+time $HADOOP/hadoop fs -get /wgs/input/fastq/$INPUT_FILE_R2 && echo "" >&2
+
 echo "*** 从HDFS上下载样本数据块" && echo "" >&2
 
 # ××××××  基因测序 ×××××××
@@ -44,6 +47,7 @@ echo "*** 从HDFS上下载样本数据块" && echo "" >&2
 echo "###COMMAND LINE###：" >&2
 echo "$BWA/bwa mem -t $THREAD -R $INFO_RG $REF $INPUT_FILE_R1 $INPUT_FILE_R2 | \
 $SAMTOOLS/samtools view -Sb - > ${sample_name}.bam" >&2
+
 time $BWA/bwa mem -t $THREAD -R $INFO_RG $REF $INPUT_FILE_R1 $INPUT_FILE_R2 | \
 $SAMTOOLS/samtools view -Sb - > ${sample_name}.bam && echo "*** 基因比对操作完成" && echo "" >&2
 
@@ -53,6 +57,7 @@ rm -f $INPUT_FILE_R1 $INPUT_FILE_R2
 echo "###COMMAND LINE###：" >&2
 echo "$SAMTOOLS/samtools sort -@ $THREAD -m $MEMORY -O bam -o ${sample_name}.sorted.bam \
 ${sample_name}.bam -T PREFIX.bam" >&2
+
 time $SAMTOOLS/samtools sort -@ $THREAD -m $MEMORY -O bam -o ${sample_name}.sorted.bam \
 ${sample_name}.bam -T PREFIX.bam && echo "*** 基因数据排序完成" && echo "" >&2
 
@@ -62,6 +67,7 @@ rm -f ${sample_name}.bam
 echo "###COMMAND LINE###：" >&2
 echo "$GATK MarkDuplicates -I ${sample_name}.sorted.bam -O ${sample_name}.sorted.markdup.bam \
 -M ${sample_name}.sorted.markup_metrics.txt" >&2
+
 time $GATK MarkDuplicates -I ${sample_name}.sorted.bam -O ${sample_name}.sorted.markdup.bam \
 -M ${sample_name}.sorted.markdup_metrics.txt 1>&2 && echo "*** 对BAM文件进行重复标记" && echo "" >&2
 
@@ -70,6 +76,7 @@ rm -f ${sample_name}.sorted.bam
 # 步骤四 创建比对索引文件
 echo "###COMMAND LINE###：" >&2
 echo "time $SAMTOOLS/samtools index ${sample_name}.sorted.markdup.bam" >&2
+
 time $SAMTOOLS/samtools index ${sample_name}.sorted.markdup.bam && echo "*** 对BAM文件创建比对索引" && echo "" >&2
 
 
@@ -77,6 +84,7 @@ time $SAMTOOLS/samtools index ${sample_name}.sorted.markdup.bam && echo "*** 对
 echo "###COMMAND LINE###：" >&2
 echo "$GATK HaplotypeCaller -R $REF --emit-ref-confidence GVCF -I ${sample_name}.sorted.markdup.bam \
 -O ${sample_name}.g.vcf" >&2
+
 time $GATK HaplotypeCaller -R $REF --emit-ref-confidence GVCF -I ${sample_name}.sorted.markdup.bam \
 -O ${sample_name}.g.vcf && echo "*** 生成样本${sample_name}的中间变异检测文件gvcf" && echo "" >&2
 
@@ -85,6 +93,7 @@ rm -f ${sample_name}.sorted.markdup.bam* ${sample_name}.sorted.markdup_metrics.t
 # 将各个样本分区的变异检测gvcf文件上传到HDFS上
 echo "###COMMAND LINE###：" >&2
 echo "$HADOOP/hadoop fs -put -f ${sample_name}.g.vcf /wgs/output/gvcf" >&2
+
 time $HADOOP/hadoop fs -put -f ${sample_name}.g.vcf /wgs/output/gvcf && echo "*** 变异检测结果gvcf文件上传到HDFS上" && echo "">&2
 
 echo "--- 结束处理样本 ${sample_name} ---"
