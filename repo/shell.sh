@@ -8,4 +8,4 @@ java -cp /opt/repo/junit/junit/4.12/junit-4.12.jar:/home/elon/IdeaProjects/wgs/w
 
 
 # 在集群中提交作业
-hadoop jar wgsv3.jar wgsDriver hdfs://longsl:8080/wgs/input/sample.txt hdfs://longsl:8080/wgs/output-1
+hadoop jar wgsv3.jar wgsDriver hdfs://longsl:8080/wgs/input/sample.txt hdfs://longsl:8080/wgs/output-3

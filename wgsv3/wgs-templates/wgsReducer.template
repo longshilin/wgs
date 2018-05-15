@@ -14,7 +14,7 @@ export REF=/root/wgs/reference/E.coli_K12_MG1655.fa
 # 定义单个节点可利用的线程数
 THREAD=1
 # 定义单个节点可利用的内存资源
-MEMORY=1G
+MEMORY=800m
 echo "############" `date "+%Y-%m-%d %H:%M:%S"` "############"
 echo "--- 开始合并处理样本 ${sample_name1} ${sample_name2} ${sample_name3} ${sample_name4} ${sample_name4} ${sample_name5} ${sample_name6} ${sample_name7} ${sample_name8} ${sample_name9} ---"
 

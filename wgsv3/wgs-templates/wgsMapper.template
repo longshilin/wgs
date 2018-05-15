@@ -16,7 +16,7 @@ export REF=/root/wgs/reference/E.coli_K12_MG1655.fa
 # 定义单个节点可利用的线程数
 THREAD=1
 # 定义单个节点可利用的内存资源
-MEMORY=1G
+MEMORY=600m
 
 # 定义RG INFO
 INFO_RG='@RG\tID:${sample_name}\tPL:illumina\tSM:E.coli_K12_${sample_name}'
