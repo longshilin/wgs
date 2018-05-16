@@ -12,7 +12,7 @@ public class wgsMapperTest {
      */
     @Test
     public void wgs() throws IOException {
-        Text value = new Text("SRR3226035");
+        Text value = new Text("SRR3226036");
 
         new MapDriver<LongWritable, Text, Text, Text>()
                 .withMapper(new wgsMapper())

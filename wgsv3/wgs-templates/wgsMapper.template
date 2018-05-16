@@ -76,8 +76,8 @@ time $SAMTOOLS/samtools index ${sample_name}.sorted.markdup.bam && echo "*** 对
 
 # 步骤五 变异检测 | 生成各个样本的中间变异检测文件gvcf
 echo "###COMMAND LINE###：" >&2
-echo "$GATK HaplotypeCaller -R $REF --emit-ref-confidence GVCF -I ${sample_name}.sorted.markdup.bam \
--O ${sample_name}.g.vcf" >&2
+echo "java -jar $GATK -T HaplotypeCaller -R $REF --emitRefConfidence GVCF -I ${sample_name}.sorted.markdup.bam \
+-o ${sample_name}.g.vcf" >&2
 
 time java -jar $GATK -T HaplotypeCaller -R $REF --emitRefConfidence GVCF -I ${sample_name}.sorted.markdup.bam \
 -o ${sample_name}.g.vcf && echo "*** 生成样本${sample_name}的中间变异检测文件gvcf" && echo "" >&2
@@ -88,7 +88,7 @@ echo "$HADOOP/hadoop fs -put -f ${sample_name}.g.vcf /wgs/output/gvcf" >&2
 
 time $HADOOP/hadoop fs -put -f ${sample_name}.g.vcf /wgs/output/gvcf && echo "*** 变异检测结果gvcf文件上传到HDFS上" && echo "">&2
 
-rm -f rm -f $INPUT_FILE_R1 $INPUT_FILE_R2 ${sample_name}*
+#rm -f rm -f $INPUT_FILE_R1 $INPUT_FILE_R2 ${sample_name}*
 
 echo "--- 结束处理样本 ${sample_name} ---"
 echo "############" `date "+%Y-%m-%d %H:%M:%S"` "############" && echo ""
