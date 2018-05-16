@@ -156,3 +156,172 @@ sys	0m0.280s
 [M::mem_pestat] low and high boundaries for proper pairs: (1, 523)
 [M::process] read 532940 sequences (40000038 bp)...
 [M::mem_process_seqs] Processed 532486 reads in 45.408 CPU sec, 15.038 real sec
+[M::process] read 132196 sequences (9922808 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (5848, 16078, 2608, 5774)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (46, 93, 175)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 433)
+[M::mem_pestat] mean and std.dev: (112.43, 90.67)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 562)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (80, 154, 235)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 545)
+[M::mem_pestat] mean and std.dev: (165.71, 109.19)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 700)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (31, 70, 144)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 370)
+[M::mem_pestat] mean and std.dev: (88.71, 79.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 483)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (47, 96, 177)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 437)
+[M::mem_pestat] mean and std.dev: (115.20, 92.15)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 567)
+[M::mem_process_seqs] Processed 532940 reads in 43.943 CPU sec, 14.338 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (1414, 3880, 665, 1445)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (46, 91, 182)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 454)
+[M::mem_pestat] mean and std.dev: (115.36, 95.14)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 590)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (86, 158, 243)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 557)
+[M::mem_pestat] mean and std.dev: (170.49, 109.94)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 714)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (29, 70, 139)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 359)
+[M::mem_pestat] mean and std.dev: (87.61, 77.27)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 469)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (49, 99, 179)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 439)
+[M::mem_pestat] mean and std.dev: (118.12, 92.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 569)
+[M::mem_process_seqs] Processed 132196 reads in 10.789 CPU sec, 3.601 real sec
+[main] Version: 0.7.12-r1039
+[main] CMD: /home/elon/biosoft/bwa/0.7.12/bwa mem -t 4 -R @RG\tID:SRR3226035\tPL:illumina\tSM:E.coli_K12_SRR3226035 /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa SRR3226035_1.fastq.gz SRR3226035_2.fastq.gz
+[main] Real time: 104.576 sec; CPU: 324.008 sec
+
+real	1m45.359s
+user	6m4.599s
+sys	0m5.345s
+
+###COMMAND LINE###：
+/home/elon/biosoft/samtools/1.0/bin/samtools sort -@ 4 -m 4G -O bam -o SRR3226035.sorted.bam SRR3226035.bam -T PREFIX.bam
+
+real	0m17.752s
+user	0m44.121s
+sys	0m0.727s
+
+###COMMAND LINE###：
+java -jar /home/elon/biosoft/picard/2.18.2/picard.jar MarkDuplicates I=SRR3226035.sorted.bam O=SRR3226035.sorted.markdup.bam M=SRR3226035.sorted.markdup_metrics.txt
+17:30:55.353 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/elon/biosoft/picard/2.18.2/picard.jar!/com/intel/gkl/native/libgkl_compression.so
+[Wed May 16 17:30:55 CST 2018] MarkDuplicates INPUT=[SRR3226035.sorted.bam] OUTPUT=SRR3226035.sorted.markdup.bam METRICS_FILE=SRR3226035.sorted.markdup_metrics.txt    MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP=50000 MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=8000 SORTING_COLLECTION_SIZE_RATIO=0.25 TAG_DUPLICATE_SET_MEMBERS=false REMOVE_SEQUENCING_DUPLICATES=false TAGGING_POLICY=DontTag CLEAR_DT=true ADD_PG_TAG_TO_READS=true REMOVE_DUPLICATES=false ASSUME_SORTED=false DUPLICATE_SCORING_STRATEGY=SUM_OF_BASE_QUALITIES PROGRAM_RECORD_ID=MarkDuplicates PROGRAM_GROUP_NAME=MarkDuplicates READ_NAME_REGEX=<optimized capture of last three ':' separated fields as numeric values> OPTICAL_DUPLICATE_PIXEL_DISTANCE=100 MAX_OPTICAL_DUPLICATE_SET_SIZE=300000 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json USE_JDK_DEFLATER=false USE_JDK_INFLATER=false
+[Wed May 16 17:30:55 CST 2018] Executing as elon@longsl on Linux 4.13.0-41-generic amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_161-b12; Deflater: Intel; Inflater: Intel; Provider GCS is not available; Picard version: 2.18.2-SNAPSHOT
+INFO	2018-05-16 17:30:55	MarkDuplicates	Start of doWork freeMemory: 114392176; totalMemory: 119013376; maxMemory: 1756364800
+INFO	2018-05-16 17:30:55	MarkDuplicates	Reading input file and constructing read end information.
+INFO	2018-05-16 17:30:55	MarkDuplicates	Will retain up to 6363640 data points before spilling to disk.
+WARNING	2018-05-16 17:30:55	AbstractOpticalDuplicateFinderCommandLineProgram	A field field parsed out of a read name was expected to contain an integer and did not. Read name: SRR3226035.53162. Cause: String 'SRR3226035.53162' did not start with a parsable number.
+INFO	2018-05-16 17:30:59	MarkDuplicates	Read 549161 records. 0 pairs never matched.
+INFO	2018-05-16 17:30:59	MarkDuplicates	After buildSortedReadEndLists freeMemory: 265450472; totalMemory: 376438784; maxMemory: 1756364800
+INFO	2018-05-16 17:30:59	MarkDuplicates	Will retain up to 54886400 duplicate indices before spilling to disk.
+INFO	2018-05-16 17:31:00	MarkDuplicates	Traversing read pair information and detecting duplicates.
+INFO	2018-05-16 17:31:00	MarkDuplicates	Traversing fragment information and detecting duplicates.
+INFO	2018-05-16 17:31:00	MarkDuplicates	Sorting list of duplicate records.
+INFO	2018-05-16 17:31:00	MarkDuplicates	After generateDuplicateIndexes freeMemory: 376759144; totalMemory: 823132160; maxMemory: 1756364800
+INFO	2018-05-16 17:31:00	MarkDuplicates	Marking 9881 records as duplicates.
+INFO	2018-05-16 17:31:00	MarkDuplicates	Found 0 optical duplicate clusters.
+INFO	2018-05-16 17:31:00	MarkDuplicates	Reads are assumed to be ordered by: coordinate
+INFO	2018-05-16 17:31:28	MarkDuplicates	Before output close freeMemory: 835691216; totalMemory: 844627968; maxMemory: 1756364800
+INFO	2018-05-16 17:31:28	MarkDuplicates	After output close freeMemory: 818389712; totalMemory: 827326464; maxMemory: 1756364800
+[Wed May 16 17:31:28 CST 2018] picard.sam.markduplicates.MarkDuplicates done. Elapsed time: 0.56 minutes.
+Runtime.totalMemory()=827326464
+
+real	0m34.543s
+user	0m41.606s
+sys	0m0.724s
+
+###COMMAND LINE###：
+time /home/elon/biosoft/samtools/1.0/bin/samtools index SRR3226035.sorted.markdup.bam
+
+real	0m2.529s
+user	0m2.488s
+sys	0m0.040s
+
+###COMMAND LINE###：
+java -jar /home/elon/biosoft/gatk/3.6/GenomeAnalysisTK.jar -T HaplotypeCaller -R /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa --emitRefConfidence GVCF -I SRR3226035.sorted.markdup.bam -o SRR3226035.g.vcf
+INFO  17:31:33,631 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  17:31:33,634 HelpFormatter - The Genome Analysis Toolkit (GATK) v3.6-6-g965413b, Compiled 2016/07/11 21:22:38 
+INFO  17:31:33,634 HelpFormatter - Copyright (c) 2010-2016 The Broad Institute 
+INFO  17:31:33,634 HelpFormatter - For support and documentation go to https://www.broadinstitute.org/gatk 
+INFO  17:31:33,635 HelpFormatter - [Wed May 16 17:31:33 CST 2018] Executing on Linux 4.13.0-41-generic amd64 
+INFO  17:31:33,635 HelpFormatter - Java HotSpot(TM) 64-Bit Server VM 1.8.0_161-b12 
+INFO  17:31:33,638 HelpFormatter - Program Args: -T HaplotypeCaller -R /home/elon/wgs/input/fasta/E.coli_K12_MG1655.fa --emitRefConfidence GVCF -I SRR3226035.sorted.markdup.bam -o SRR3226035.g.vcf 
+INFO  17:31:33,641 HelpFormatter - Executing as elon@longsl on Linux 4.13.0-41-generic amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_161-b12. 
+INFO  17:31:33,642 HelpFormatter - Date/Time: 2018/05/16 17:31:33 
+INFO  17:31:33,642 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  17:31:33,642 HelpFormatter - -------------------------------------------------------------------------------- 
+INFO  17:31:33,658 GenomeAnalysisEngine - Strictness is SILENT 
+INFO  17:31:33,748 GenomeAnalysisEngine - Downsampling Settings: Method: BY_SAMPLE, Target Coverage: 500 
+INFO  17:31:33,754 SAMDataSource$SAMReaders - Initializing SAMRecords in serial 
+INFO  17:31:33,777 SAMDataSource$SAMReaders - Done initializing BAM readers: total time 0.02 
+INFO  17:31:33,786 HCMappingQualityFilter - Filtering out reads with MAPQ < 20 
+INFO  17:31:33,868 GenomeAnalysisEngine - Preparing for traversal over 1 BAM files 
+INFO  17:31:33,895 GenomeAnalysisEngine - Done preparing for traversal 
+INFO  17:31:33,895 ProgressMeter - [INITIALIZATION COMPLETE; STARTING PROCESSING] 
+INFO  17:31:33,895 ProgressMeter -                 |      processed |    time |         per 1M |           |   total | remaining 
+INFO  17:31:33,896 ProgressMeter -        Location | active regions | elapsed | active regions | completed | runtime |   runtime 
+INFO  17:31:33,896 HaplotypeCaller - Standard Emitting and Calling confidence set to 0.0 for reference-model confidence output 
+INFO  17:31:33,896 HaplotypeCaller - All sites annotated with PLs forced to true for reference-model confidence output 
+WARN  17:31:33,937 InbreedingCoeff - Annotation will not be calculated. InbreedingCoeff requires at least 10 unrelated samples. 
+INFO  17:31:34,017 HaplotypeCaller - Using global mismapping rate of 45 => -4.5 in log10 likelihood units 
+Using AVX accelerated implementation of PairHMM
+INFO  17:31:34,828 VectorLoglessPairHMM - libVectorLoglessPairHMM unpacked successfully from GATK jar file 
+INFO  17:31:34,828 VectorLoglessPairHMM - Using vectorized implementation of PairHMM 
+WARN  17:31:35,328 HaplotypeScore - Annotation will not be calculated, must be called from UnifiedGenotyper 
+INFO  17:32:03,899 ProgressMeter - NC_000913.3:94890              0.0    30.0 s           49.6 w        5.4%     9.3 m       8.8 m 
+WARN  17:32:08,031 AnnotationUtils - Annotation will not be calculated, genotype is not called 
+WARN  17:32:08,031 AnnotationUtils - Annotation will not be calculated, genotype is not called 
+INFO  17:32:33,899 ProgressMeter - NC_000913.3:216049              0.0    60.0 s           99.2 w       12.2%     8.2 m       7.2 m 
+INFO  17:33:03,900 ProgressMeter - NC_000913.3:228927              0.0    90.0 s          148.8 w       12.9%    11.6 m      10.1 m 
+INFO  17:33:33,901 ProgressMeter - NC_000913.3:317925              0.0   120.0 s          198.4 w       18.0%    11.1 m       9.1 m 
+INFO  17:34:03,902 ProgressMeter - NC_000913.3:441896              0.0     2.5 m          248.0 w       25.0%    10.0 m       7.5 m 
+INFO  17:34:43,903 ProgressMeter - NC_000913.3:637645              0.0     3.2 m          314.2 w       36.0%     8.8 m       5.6 m 
+INFO  17:35:13,903 ProgressMeter - NC_000913.3:732098              0.0     3.7 m          363.8 w       41.4%     8.9 m       5.2 m 
+INFO  17:35:43,904 ProgressMeter - NC_000913.3:787232              0.0     4.2 m          413.4 w       44.5%     9.4 m       5.2 m 
+INFO  17:36:13,905 ProgressMeter - NC_000913.3:952313              0.0     4.7 m          463.0 w       53.8%     8.7 m       4.0 m 
+INFO  17:36:53,908 ProgressMeter - NC_000913.3:1109192              0.0     5.3 m          529.1 w       62.7%     8.5 m       3.2 m 
+INFO  17:37:23,909 ProgressMeter - NC_000913.3:1213528              0.0     5.8 m          578.7 w       68.6%     8.5 m       2.7 m 
+INFO  17:38:03,910 ProgressMeter - NC_000913.3:1343518              0.0     6.5 m          644.9 w       75.9%     8.6 m       2.1 m 
+INFO  17:38:43,910 ProgressMeter - NC_000913.3:1545093              0.0     7.2 m          711.0 w       87.3%     8.2 m      62.0 s 
+INFO  17:39:13,911 ProgressMeter - NC_000913.3:1656353              0.0     7.7 m          760.6 w       93.6%     8.2 m      31.0 s 
+INFO  17:39:35,848 VectorLoglessPairHMM - Time spent in setup for JNI call : 0.25328116300000003 
+INFO  17:39:35,848 PairHMM - Total compute time in PairHMM computeLikelihoods() : 195.940372177 
+INFO  17:39:35,849 HaplotypeCaller - Ran local assembly on 13025 active regions 
+INFO  17:39:35,852 ProgressMeter -            done        1769345.0     8.0 m            4.5 m      100.0%     8.0 m       0.0 s 
+INFO  17:39:35,853 ProgressMeter - Total runtime 481.96 secs, 8.03 min, 0.13 hours 
+INFO  17:39:35,853 MicroScheduler - 36374 reads were filtered out during the traversal out of approximately 549161 total reads (6.62%) 
+INFO  17:39:35,854 MicroScheduler -   -> 0 reads (0.00% of total) failing BadCigarFilter 
+INFO  17:39:35,854 MicroScheduler -   -> 8497 reads (1.55% of total) failing DuplicateReadFilter 
+INFO  17:39:35,854 MicroScheduler -   -> 0 reads (0.00% of total) failing FailsVendorQualityCheckFilter 
+INFO  17:39:35,854 MicroScheduler -   -> 27877 reads (5.08% of total) failing HCMappingQualityFilter 
+INFO  17:39:35,854 MicroScheduler -   -> 0 reads (0.00% of total) failing MalformedReadFilter 
+INFO  17:39:35,855 MicroScheduler -   -> 0 reads (0.00% of total) failing MappingQualityUnavailableFilter 
+INFO  17:39:35,855 MicroScheduler -   -> 0 reads (0.00% of total) failing NotPrimaryAlignmentFilter 
+INFO  17:39:35,855 MicroScheduler -   -> 0 reads (0.00% of total) failing UnmappedReadFilter 
+
+real	8m4.509s
+user	9m31.756s
+sys	0m1.713s
+
+###COMMAND LINE###：
+/home/elon/hadoop/bin/hadoop fs -put -f SRR3226035.g.vcf /wgsv2/output/gvcf
+18/05/16 17:39:36 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+real	0m2.576s
+user	0m5.122s
+sys	0m0.251s
+

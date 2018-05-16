@@ -21,3 +21,4 @@
 2018-05-16 17:28:45  [ main:936 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper_zh.template"): Not found
 2018-05-16 17:28:45  [ main:937 ] - [ DEBUG ]  TemplateLoader.findTemplateSource("wgsMapper.template"): Found
 2018-05-16 17:28:45  [ main:937 ] - [ DEBUG ]  Loading template for "wgsMapper.template"("zh_CN", UTF-8, parsed) from "/home/elon/IdeaProjects/wgs/wgsv2/wgs-templates/wgsMapper.template"
+2018-05-16 17:39:38  [ main:653504 ] - [ DEBUG ]  Matched expected output (1, SRR3226035) at position 0

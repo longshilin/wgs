@@ -61,7 +61,7 @@ time $SAMTOOLS/samtools sort -@ $THREAD -m $MEMORY -O bam -o ${sample_name}.sort
 echo "###COMMAND LINE###：" >&2
 echo "java -jar $PICARD MarkDuplicates I=${sample_name}.sorted.bam O=${sample_name}.sorted.markdup.bam M=${sample_name}.sorted.markdup_metrics.txt" >&2
 
-time java -jar $PICARD MarkDuplicates I=${sample_name}.sorted.bam O=${sample_name}.sorted.markdup.bam M=${sample_name}.sorted.markdup_metrics.txt && echo "*** 对BAM文件进行重复标记" && echo "" >&2
+time java -jar $PICARD MarkDuplicates I=${sample_name}.sorted.bam O=${sample_name}.sorted.markdup.bam M=${sample_name}.sorted.markdup_metrics.txt 1>&2 && echo "*** 对BAM文件进行重复标记" && echo "" >&2
 
 # 步骤四 创建比对索引文件
 echo "###COMMAND LINE###：" >&2
