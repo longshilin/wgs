@@ -8,7 +8,7 @@
 export BWA=/root/biosoft/bwa/0.7.12
 export SAMTOOLS=/root/biosoft/samtools/1.0/bin
 export GATK=/root/biosoft/gatk/3.6/GenomeAnalysisTK.jar
-export PICARD=~/biosoft/picard/2.18.2/picard.jar
+export PICARD=/root/biosoft/picard/2.18.2/picard.jar
 export HADOOP=/root/hadoop/bin
 
 # 定义参考序列
