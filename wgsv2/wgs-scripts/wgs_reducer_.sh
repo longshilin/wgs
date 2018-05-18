@@ -47,6 +47,7 @@ echo "java -jar $GATK -T GenotypeGVCFs -nt 4 -R $REF --variant $INPUT_FILE1 --va
 --variant $INPUT_FILE3 --variant $INPUT_FILE4 --variant $INPUT_FILE5 --variant $INPUT_FILE6 \
 --variant $INPUT_FILE7 --variant $INPUT_FILE8 --variant $INPUT_FILE9 \
 -o E_coli_K12.vcf" >&2
+
 time java -jar $GATK -T GenotypeGVCFs -nt 4 -R $REF --variant $INPUT_FILE1 --variant $INPUT_FILE2 \
 --variant $INPUT_FILE3 --variant $INPUT_FILE4 --variant $INPUT_FILE5 --variant $INPUT_FILE6 \
 --variant $INPUT_FILE7 --variant $INPUT_FILE8 --variant $INPUT_FILE9 \
@@ -55,6 +56,7 @@ time java -jar $GATK -T GenotypeGVCFs -nt 4 -R $REF --variant $INPUT_FILE1 --var
 ## 1.将vcf文件压缩
 echo "###COMMAND LINE###：" >&2
 echo "bgzip -f E_coli_K12.vcf" >&2
+
 time bgzip -f E_coli_K12.vcf && echo "*** 将vcf文件进行压缩" && echo "">&2
 
 ## 2.构建tabix索引
@@ -66,10 +68,11 @@ time $SAMTOOLS/tabix -p vcf E_coli_K12.vcf.gz \
 
 ## 3. 上传最终的VCF文件以及索引文件到HDFS上
 echo "###COMMAND LINE###：" >&2
-echo "$HADOOP/hadoop fs -put E_coli_K12.vcf.gz* /wgsv2/output/vcf" >&2
-$HADOOP/hadoop fs -put E_coli_K12.vcf.gz* /wgsv2/output/vcf \
-&& echo "*** 变异检测结果vcf文件上传到HDFS上" && echo "">&2
+echo "$HADOOP/hadoop fs -f -put E_coli_K12.vcf.gz* /wgsv2/output/vcf" >&2
 
-rm -f E_coli_K12.vcf*
-echo "############" `date "+%Y-%m-%d %H:%M:%S"` "############"
-echo "--- 结束处理样本  ---" && echo "" >&2
+time $HADOOP/hadoop fs -put -f E_coli_K12.vcf.gz* /wgsv2/output/vcf && echo "*** 变异检测结果vcf文件上传到HDFS上" && echo "">&2
+
+#rm -f E_coli_K12.vcf* *g.vcf*
+
+echo "--- 结束处理样本  ---"
+echo "############" `date "+%Y-%m-%d %H:%M:%S"` "############" && echo ""

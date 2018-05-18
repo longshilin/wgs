@@ -73,7 +73,7 @@ echo "$HADOOP/hadoop fs -f -put E_coli_K12.vcf.gz* /wgsv2/output/vcf" >&2
 time $HADOOP/hadoop fs -f -put E_coli_K12.vcf.gz* /wgsv2/output/vcf \
 && echo "*** 变异检测结果vcf文件上传到HDFS上" && echo "">&2
 
-rm -f E_coli_K12.vcf* *g.vcf*
+#rm -f E_coli_K12.vcf* *g.vcf*
 
-echo "--- 结束处理样本 ${sample_name} ---"
+echo "--- 结束合并处理样本 ${sample_name1} ${sample_name2} ${sample_name3} ${sample_name4} ${sample_name4} ${sample_name5} ${sample_name6} ${sample_name7} ${sample_name8} ${sample_name9} ---"
 echo "############" `date "+%Y-%m-%d %H:%M:%S"` "############" && echo ""

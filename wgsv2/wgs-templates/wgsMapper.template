@@ -61,7 +61,7 @@ time $SAMTOOLS/samtools sort -@ $THREAD -m $MEMORY -O bam -o ${sample_name}.sort
 echo "###COMMAND LINE###：" >&2
 echo "java -jar $PICARD MarkDuplicates I=${sample_name}.sorted.bam O=${sample_name}.sorted.markdup.bam M=${sample_name}.sorted.markdup_metrics.txt" >&2
 
-time java -jar $PICARD MarkDuplicates I=${sample_name}.sorted.bam O=${sample_name}.sorted.markdup.bam M=${sample_name}.sorted.markdup_metrics.txt 1>&2&& echo "*** 对BAM文件进行重复标记" && echo "" >&2
+time java -jar $PICARD MarkDuplicates I=${sample_name}.sorted.bam O=${sample_name}.sorted.markdup.bam M=${sample_name}.sorted.markdup_metrics.txt 1>&2 && echo "*** 对BAM文件进行重复标记" && echo "" >&2
 
 # 步骤四 创建比对索引文件
 echo "###COMMAND LINE###：" >&2
@@ -73,7 +73,7 @@ time $SAMTOOLS/samtools index ${sample_name}.sorted.markdup.bam && echo "*** 对
 echo "###COMMAND LINE###：" >&2
 echo "java -jar $GATK -T HaplotypeCaller -R $REF --emitRefConfidence GVCF -I ${sample_name}.sorted.markdup.bam -o ${sample_name}.g.vcf" >&2
 
-time java -jar $GATK -T HaplotypeCaller -R $REF --emitRefConfidence GVCF -I ${sample_name}.sorted.markdup.bam -o ${sample_name}.g.vcf && echo "*** 生成样本${sample_name}的中间变异检测文件gvcf" && echo "" >&2
+time java -jar $GATK -T HaplotypeCaller -R $REF --emitRefConfidence GVCF -I ${sample_name}.sorted.markdup.bam -o ${sample_name}.g.vcf 1>&2 && echo "*** 生成样本${sample_name}的中间变异检测文件gvcf" && echo "" >&2
 
 # 将各个样本分区的变异检测gvcf文件上传到HDFS上
 echo "###COMMAND LINE###：" >&2
@@ -81,7 +81,7 @@ echo "$HADOOP/hadoop fs -put -f ${sample_name}.g.vcf /wgsv2/output/gvcf" >&2
 
 time $HADOOP/hadoop fs -put -f ${sample_name}.g.vcf /wgsv2/output/gvcf && echo "*** 变异检测结果gvcf文件上传到HDFS上" && echo "">&2
 
-#rm -f rm -f $INPUT_FILE_R1 $INPUT_FILE_R2 ${sample_name}*
+rm -f rm -f $INPUT_FILE_R1 $INPUT_FILE_R2 ${sample_name}*
 
 echo "--- 结束处理样本 ${sample_name} ---"
 echo "############" `date "+%Y-%m-%d %H:%M:%S"` "############" && echo ""

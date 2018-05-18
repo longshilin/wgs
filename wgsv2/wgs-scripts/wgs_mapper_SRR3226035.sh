@@ -61,7 +61,7 @@ time $SAMTOOLS/samtools sort -@ $THREAD -m $MEMORY -O bam -o SRR3226035.sorted.b
 echo "###COMMAND LINE###：" >&2
 echo "java -jar $PICARD MarkDuplicates I=SRR3226035.sorted.bam O=SRR3226035.sorted.markdup.bam M=SRR3226035.sorted.markdup_metrics.txt" >&2
 
-time java -jar $PICARD MarkDuplicates I=SRR3226035.sorted.bam O=SRR3226035.sorted.markdup.bam M=SRR3226035.sorted.markdup_metrics.txt && echo "*** 对BAM文件进行重复标记" && echo "" >&2
+time java -jar $PICARD MarkDuplicates I=SRR3226035.sorted.bam O=SRR3226035.sorted.markdup.bam M=SRR3226035.sorted.markdup_metrics.txt 1>&2&& echo "*** 对BAM文件进行重复标记" && echo "" >&2
 
 # 步骤四 创建比对索引文件
 echo "###COMMAND LINE###：" >&2
@@ -81,7 +81,7 @@ echo "$HADOOP/hadoop fs -put -f SRR3226035.g.vcf /wgsv2/output/gvcf" >&2
 
 time $HADOOP/hadoop fs -put -f SRR3226035.g.vcf /wgsv2/output/gvcf && echo "*** 变异检测结果gvcf文件上传到HDFS上" && echo "">&2
 
-#rm -f rm -f $INPUT_FILE_R1 $INPUT_FILE_R2 SRR3226035*
+rm -f rm -f $INPUT_FILE_R1 $INPUT_FILE_R2 SRR3226035*
 
 echo "--- 结束处理样本 SRR3226035 ---"
 echo "############" `date "+%Y-%m-%d %H:%M:%S"` "############" && echo ""
