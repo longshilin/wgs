@@ -1,4 +1,6 @@
-# 基于Hadoop的基因组测序大数据分析平台研究 (WGS Sequencing In Hadoop MapReduce)
+# 基于Hadoop的基因组测序大数据分析平台研究 
+(WGS Sequencing In Hadoop MapReduce)
+
 >声明：**基于Hadoop的基因组测序大数据分析平台研究**是本人2018年的毕业设计课题，根据网络资源和自己的专业知识，独立完成整个流程设计、平台搭建和单元测试等工作。**本系列文章是对该项目的一个整理总结和分享记录。该目录提及的系列文章可供转载，并无需通知作者，但需要在明显地方标注文章出处**
 
 
@@ -11,7 +13,7 @@
 
 
 
-#【目录】
+【目录】
 
 <a href="https://blog.csdn.net/Coder__CS/article/details/81259481">  摘要</a>
 
