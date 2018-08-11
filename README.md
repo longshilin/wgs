@@ -43,7 +43,7 @@
 - <a href="https://blog.csdn.net/Coder__CS/article/details/81258967#44-分布式环境下mapreduce作业构建">4.4 分布式环境下MapReduce作业构建</a>
 - <a href="https://blog.csdn.net/Coder__CS/article/details/81258967#45-shell脚本执行引擎的构建">4.5 Shell脚本执行引擎的构建</a>
 - <a href="https://blog.csdn.net/Coder__CS/article/details/81258967#46-mapreduce作业编写与整体调度">4.6 MapReduce作业编写与整体调度</a>
-- <a href="https://blog.csdn.net/Coder__CS/article/details/81258967#47-本章小结">4.7 本章小结</a
+- <a href="https://blog.csdn.net/Coder__CS/article/details/81258967#47-本章小结">4.7 本章小结</a>
 
 <a href="https://blog.csdn.net/Coder__CS/article/details/81259348#5-系统的测试与扩展">5 系统的测试与扩展</a>
 - <a href="https://blog.csdn.net/Coder__CS/article/details/81259348#51-mrunit测试类编写">5.1 MRUnit测试类编写</a>
